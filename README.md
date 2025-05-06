@@ -7,3 +7,9 @@ git clone --branch devel_ion_filip https://github.com/nikq51/curs_SCC_25_animale
 cd curs_SCC_25_animale
 
 make all
+# Deschide in browser 
+http://localhost:5000/alpaca
+-------------sau-----------------
+http://127.0.0.1:5000/alpaca
+
+# Despre proiect
