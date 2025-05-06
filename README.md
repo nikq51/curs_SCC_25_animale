@@ -20,11 +20,11 @@ Aplicația Alpaca App din cadrul proiectului SCC 2025 (grupa 441D) își propune
 
    Biblioteca de funcții pentru Alpaca
 
-     '''   În app/lib/biblioteca_animale.py am definit două funcții:
+        În app/lib/biblioteca_animale.py am definit două funcții:
 
             culoare_alpaca(), care returnează o descriere a culorii lânii alpaca
 
-            descriere_alpaca(), care oferă informații generale despre animal'''
+            descriere_alpaca(), care oferă informații generale despre animal
 	    
 Server Flask
 
