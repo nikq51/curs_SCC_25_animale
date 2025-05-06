@@ -1,11 +1,13 @@
-# Asigură-te că Make este instalat pe sistem (ex. sudo apt install make pe Ubuntu).
-# Ruleaza intr-un terminal de linux urmatoarele 3 comenzi:
+# Tutorial
+*Asigură-te că Make este instalat pe sistem (ex. sudo apt install make pe Ubuntu).
+*Ruleaza intr-un terminal de linux urmatoarele 3 comenzi:
 
 git clone --branch main_ion_filip https://github.com/nikq51/curs_SCC_25_animale.git
 
 cd curs_SCC_25_animale
 
 make all
+
 # Deschide in browser 
 http://localhost:5000/alpaca
 -------------sau-----------------
