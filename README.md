@@ -16,7 +16,7 @@ http://127.0.0.1:5000/alpaca
 
 Aplicația Alpaca App din cadrul proiectului SCC 2025 (grupa 441D) își propune să demonstreze un flux complet de dezvoltare și livrare continuă pentru o aplicație web simplă. Principalii pași parcurși sunt:
 
-    Biblioteca de funcții pentru Alpaca
+   Biblioteca de funcții pentru Alpaca
 
         În app/lib/biblioteca_animale.py am definit două funcții:
 
@@ -24,9 +24,7 @@ Aplicația Alpaca App din cadrul proiectului SCC 2025 (grupa 441D) își propune
 
             descriere_alpaca(), care oferă informații generale despre animal
 
-        Acest modul izolează logica de „business” specifică temei în afara aplicației web.
-
-    Server Flask
+Server Flask
 
         În app/main.py am creat un server Flask cu trei rute:
 
@@ -38,7 +36,7 @@ Aplicația Alpaca App din cadrul proiectului SCC 2025 (grupa 441D) își propune
 
         Am folosit render_template_string pentru a genera rapid un meniu simplu cu hyperlink-uri.
 
-    Teste automatizate cu pytest
+   Teste automatizate cu pytest
 
         În tests/test_biblioteca_animale.py am scris teste care:
 
@@ -46,7 +44,7 @@ Aplicația Alpaca App din cadrul proiectului SCC 2025 (grupa 441D) își propune
 
             verifică că descriere_alpaca() returnează un șir de minim 10 caractere
 
-        Rulez testele local cu:
+   Rulez testele local cu:
 
     PYTHONPATH=$(pwd) pytest
 
@@ -56,9 +54,9 @@ Containerizare Docker
 
     Local, imaginea e construită cu:
 
-docker build -t alpaca_app .
+	docker build -t alpaca_app .
 
-Și rulează astfel:
+	Și rulează astfel:
 
     docker run -p 5000:5000 alpaca_app
 
@@ -66,7 +64,7 @@ Automatizare CI/CD cu Jenkins
 
     Am definit un Jenkinsfile în modul declarativ, cu etape de:
 
-        Checkout – preia codul din branch-ul devel_ion_filip
+        Checkout – preia codul din branch-ul main_ion_filip
 
         Install – pip install -r requirements.txt
 
@@ -76,7 +74,9 @@ Automatizare CI/CD cu Jenkins
 
     Jenkins rulează pipeline-ul la fiecare push, asigurându-se că codul e testat și containerul poate fi construit.
 
-Facilitarea execuției cu Makefile
+Makefile
+
+	Un makefile este practic un script ce poate fi rulat cu "make" pentru a compila un executabil binar final.
 
     În rădăcina repo-ului am adăugat un Makefile cu ținte:
 
