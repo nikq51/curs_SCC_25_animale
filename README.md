@@ -16,7 +16,7 @@ http://127.0.0.1:5000/alpaca
 
 # Despre proiect
 
-Aplicația Alpaca App din cadrul proiectului SCC 2025 (grupa 441D) își propune să demonstreze un flux complet de dezvoltare și livrare continuă pentru o aplicație web simplă. Principalii pași parcurși sunt:
+Aplicația Alpaca App din cadrul proiectului SCC 2025 (student Ion Filip-Viorel, grupa 441D) își propune să demonstreze un flux complet de dezvoltare și livrare continuă pentru o aplicație web simplă. Principalii pași parcurși sunt:
 
    Biblioteca de funcții pentru Alpaca
 
