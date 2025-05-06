@@ -1,4 +1,4 @@
-	''' Tutorial'''
+# Tutorial
 1. Asigură-te că Make este instalat pe sistem (ex. sudo apt install make pe Ubuntu).
 
 2. Ruleaza intr-un terminal de linux urmatoarele 3 comenzi:
@@ -15,7 +15,7 @@ http://localhost:5000/alpaca
 http://127.0.0.1:5000/alpaca
 
 # Despre proiect
-
+'''
 Aplicația Alpaca App din cadrul proiectului SCC 2025 (grupa 441D) își propune să demonstreze un flux complet de dezvoltare și livrare continuă pentru o aplicație web simplă. Principalii pași parcurși sunt:
 
    Biblioteca de funcții pentru Alpaca
@@ -25,7 +25,7 @@ Aplicația Alpaca App din cadrul proiectului SCC 2025 (grupa 441D) își propune
             culoare_alpaca(), care returnează o descriere a culorii lânii alpaca
 
             descriere_alpaca(), care oferă informații generale despre animal
-
+'''
 Server Flask
 
         În app/main.py am creat un server Flask cu trei rute:
