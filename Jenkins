@@ -1,0 +1,62 @@
+pipeline {
+    agent any
+
+    environment {
+        IMAGE_NAME = "caine"
+        IMAGE_TAG = "v${BUILD_NUMBER}"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'Preluare cod sursă...'
+                checkout scm
+            }
+        }
+
+        stage('Setup venv și instalare requirements') {
+            steps {
+                sh '''
+                    python3 -m venv .venv
+                    . .venv/bin/activate
+                    pip install --upgrade pip
+                    pip install -r quickrequirements.txt
+                '''
+            }
+        }
+
+        stage('Linter - pylint') {
+            steps {
+                sh '''
+                    . .venv/bin/activate
+                    pylint caine.py || true
+                '''
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                sh '''
+                    docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .
+                '''
+            }
+        }
+
+        stage('Docker Run (opțional)') {
+            steps {
+                sh '''
+                    docker run -d --name caine_container_${BUILD_NUMBER} -p 5050:5050 ${IMAGE_NAME}:${IMAGE_TAG}
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Totul a mers bine: build + docker.'
+        }
+        failure {
+            echo 'Ceva a eșuat în pipeline.'
+        }
+    }
+}
