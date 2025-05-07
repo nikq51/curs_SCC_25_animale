@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sh '''
                     . .venv/bin/activate
-                    pylint pisica.py app/lib/.py app/tests/.py || true
+                    pylint pisica.py app/lib/*.py app/tests/*.py || true
                 '''
             }
         }
