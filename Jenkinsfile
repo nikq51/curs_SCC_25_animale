@@ -7,13 +7,16 @@ pipeline {
             steps {
                 git branch: 'dev/ivascu_alexia', url: 'https://github.com/alexia-ivascu/curs_vcgj_2025_animale.git'
             }
-        }
+kpipeline {
+    agent any
 
-        stage('Setup Python') {
+    stages {
+
+        stage('Install Dependencies') {
             steps {
                 sh 'python3 -m venv venv'
                 sh './venv/bin/pip install --upgrade pip'
-                sh './venv/bin/pip install -r quickrequirements.py'
+                sh './venv/bin/pip install -r quickrequirements.txt'
             }
         }
 
@@ -28,6 +31,6 @@ pipeline {
                 sh 'docker build -t tigru-app .'
             }
         }
-
     }
 }
+
