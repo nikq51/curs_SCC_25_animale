@@ -135,4 +135,4 @@ git commit -m "Adaug README.md final pentru tema Tigru"
 git push
 ````
 
-Vrei și o captură de ecran sau link-uri demo pe care să le adaugi în README?
+
