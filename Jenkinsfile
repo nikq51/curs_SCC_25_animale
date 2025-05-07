@@ -3,15 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git branch: 'dev/ivascu_alexia', url: 'https://github.com/alexia-ivascu/curs_vcgj_2025_animale.git'
-            }
-kpipeline {
-    agent any
-
-    stages {
-
         stage('Install Dependencies') {
             steps {
                 sh 'python3 -m venv venv'
@@ -31,6 +22,6 @@ kpipeline {
                 sh 'docker build -t tigru-app .'
             }
         }
-    }
-}
 
+    } // << asta închide stages
+}     // << asta închide pipeline
