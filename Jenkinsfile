@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sh '''
                     . .venv/bin/activate
-                    pylint caine.py app/lib/*.py || true
+                    pylint caine.py app/lib/helper.py || true
                 '''
             }
         }
