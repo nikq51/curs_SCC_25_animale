@@ -13,7 +13,8 @@ pipeline {
 
         stage('Run Unit Tests') {
             steps {
-                sh './venv/bin/python -m unittest discover -s app/tests -p "test_*.py"'
+                // Important: setăm PYTHONPATH ca să funcționeze importurile
+                sh 'PYTHONPATH=. ./venv/bin/python -m unittest discover -s app/tests -p "test_*.py"'
             }
         }
 
@@ -23,5 +24,5 @@ pipeline {
             }
         }
 
-    } // << asta închide stages
-}     // << asta închide pipeline
+    }
+}
