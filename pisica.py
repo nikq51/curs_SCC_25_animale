@@ -55,6 +55,19 @@ html_template = """
 </body>
 </html>
 """
+@app.route("/", methods=['GET'])
+def pagina_principala():
+    continut = """
+    <h1> Bine ai venit la lumea pisicilor!</h1>
+    <p class="intro">
+        Aceasta este o pagină dedicată pisicilor. Aici poți afla descrierea, culorile și numele amuzante ale pisicilor.
+        Apasă pe butonul de mai jos pentru a începe aventura!
+    </p>
+    <form action="/pisica">
+         <button type="submit">Intră în lumea pisicilor</button>
+    </form>
+    """
+    return html_template.format(titlu="Pagina Principală", continut=continut)
 
 @app.route("/pisica", methods=['GET'])
 def pagina_pisica():
