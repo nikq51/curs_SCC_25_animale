@@ -6,7 +6,7 @@ WORKDIR /app
 COPY . .
 
 # Instalare dependințe
-RUN pip install --no-cache-dir -r quickrequirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Expune portul 5000
 EXPOSE 5000
