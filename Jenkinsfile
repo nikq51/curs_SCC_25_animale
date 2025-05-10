@@ -1,39 +1,55 @@
 pipeline {
-  agent any
-  stages {
-    stage('Checkout') {
-      steps {
-          checkout scm 
-          }
+    agent any
+
+    environment {
+        VENV_DIR = 'venv'
     }
-    stage('Install Dependencies') {
-      steps { 
-      	   sh 'python3 -m venv venv'
-      	   sh '. venv/bin/activate'
-      	   sh './venv/bin/pip install --upgrade pip'
-      	   sh './venv/bin/pip install -r requirements.txt'
-      	   
-      	   }
-    }
-    stage('Test') {
-      steps { 
-      	  sh 'cd /home/razvan/SCC/curs_SCC_25_animale'
-	  sh 'python3 -m unittest app.test.test_marmota' 
-	   
-	   }
-    }
-    stage('Build Docker image'){
-       steps {
-	  sh 'docker build -t marmota_app .'
-	}
-    }
-  }
-  post {
-  	success {
-            echo 'Succes!'
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
         }
+
+        stage('Install Dependencies') {
+            steps {
+                sh '''
+                    python3 -m venv $VENV_DIR
+                    . $VENV_DIR/bin/activate
+                    pip install --upgrade pip
+                    if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+                '''
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh '''
+                    . $VENV_DIR/bin/activate
+                    python3 -m unittest app.test.test_marmota
+                '''
+            }
+        }
+
+        stage('Build Docker image') {
+            when {
+                expression { fileExists('Dockerfile') }
+            }
+            steps {
+                sh '''
+                    docker build -t marmota_app .
+                '''
+            }
+        }
+    }
+
+    post {
         failure {
             echo 'Eroare!'
+        }
+        success {
+            echo 'Pipeline rulat cu succes.'
         }
     }
 }
