@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build & Setup venv') {
             steps {
-                echo 'Setup mediu virtual și instalare dependințe...'
+                echo 'Setup mediu virtual si instalare dependinte...'
                 sh '''
                     python3 -m venv venv
                     . ${VENV_PATH}/bin/activate
@@ -23,21 +23,21 @@ pipeline {
                 echo 'Rulare pylint pe codul Vidra...'
                 sh '''
                     . ${VENV_PATH}/bin/activate
-                    echo 'Analiză lib/.py'
-                    pylint --exit-zero lib || true
+                    echo 'Analiza lib/'
+                    pylint lib || true
 
-                    echo 'Analiză test/.py'
-                    pylint --exit-zero test/.py  true
+                    echo 'Analiza test/'
+                    pylint test || true
 
-                    echo 'Analiză vidra.py'
-                    pylint --exit-zero vidra.py  true
+                    echo 'Analiza vidra.py'
+                    pylint vidra.py || true
                 '''
             }
         }
 
         stage('Unit Testing') {
             steps {
-                echo 'Testare unitară...'
+                echo 'Testare unitara...'
                 sh '''
                     . ${VENV_PATH}/bin/activate
                     python3 -m unittest app.test.testare
@@ -50,7 +50,7 @@ pipeline {
                 echo "Build Docker pentru Vidra (ID: ${BUILD_NUMBER})"
                 sh '''
                     docker build -t vidra:v${BUILD_NUMBER} .
-                    docker rm -f vidra${BUILD_NUMBER}  true
+                    docker rm -f vidra${BUILD_NUMBER} || true
                     docker create --name vidra${BUILD_NUMBER} -p 8020:5000 vidra:v${BUILD_NUMBER}
                 '''
             }
@@ -62,7 +62,7 @@ pipeline {
             echo 'Pipeline Vidra finalizat cu succes.'
         }
         failure {
-            echo 'A apărut o eroare în pipeline.'
-        }
-    }
+            echo 'A aparut o eroare in pipeline.'
+        }
+    }
 }
