@@ -64,5 +64,5 @@ pipeline {
         failure {
             echo 'A apărut o eroare în pipeline.'
         }
-    }
+    }
 }
