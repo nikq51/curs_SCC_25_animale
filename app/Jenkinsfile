@@ -25,8 +25,8 @@ pipeline {
                     pylint --exit-zero lib/*.py;
                     echo '\n\nVerificare tests/*.py cu pylint';
                     pylint --exit-zero tests/*.py;
-                    echo '\n\nVerificare 442D_animale.py cu pylint';
-                    pylint --exit-zero 442D_animale.py;
+                    echo '\n\nVerificare animale.py cu pylint';
+                    pylint --exit-zero animale.py;
                 '''
             }
         }
@@ -46,7 +46,7 @@ pipeline {
         stage('Deploy') {
             agent any
             steps {
-                echo 'IN lucru ! ...'
+                echo 'SE LUCREAZA ! ...'
             }
         }
     }
