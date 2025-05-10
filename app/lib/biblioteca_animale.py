@@ -1,5 +1,8 @@
+"""Modul cu informații despre arici."""
+
 def salut():
-	return "Salut din biblioteca_animale!"
+    return "Salut din biblioteca_animale!"
+
 def culoare_arici():
     return "gri"
 
