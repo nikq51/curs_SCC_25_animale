@@ -1,63 +1,68 @@
 pipeline {
     agent any
 
-    parameters {
-        booleanParam(name: 'TRIGGER_MANUAL', defaultValue: false, description: 'Rulează manual pipeline-ul?')
+    environment {
+        VENV_PATH = "./venv"
     }
 
     stages {
-
-        stage('Start') {
+        stage('Build & Setup venv') {
             steps {
-                script {
-                    if (params.TRIGGER_MANUAL) {
-                        echo "Pipeline pornit MANUAL."
-                    } else {
-                        echo "Pipeline pornit AUTOMAT."
-                    }
-                }
+                echo 'Setup mediu virtual și instalare dependințe...'
+                sh '''
+                    python3 -m venv venv
+                    . ${VENV_PATH}/bin/activate
+                    pip install --upgrade pip
+                    pip install -r requirements.txt
+                '''
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Pylint - Calitate cod') {
             steps {
-                sh 'python3 -m venv venv'
-                sh './venv/bin/pip install --upgrade pip'
-                sh './venv/bin/pip install -r quickrequirements.txt'
+                echo 'Rulare pylint pe codul Capibara...'
+                sh '''
+                    . ${VENV_PATH}/bin/activate
+                    echo 'Analiză lib/.py'
+                    pylint --exit-zero lib/.py  true
+
+                    echo 'Analiză test/.py'
+                    pylint --exit-zero test/.py  true
+
+                    echo 'Analiză capibara.py'
+                    pylint --exit-zero capibara.py  true
+                '''
             }
         }
 
-        stage('Run Unit Tests from app/test/') {
+        stage('Unit Testing') {
             steps {
-                // Adaugăm app în PYTHONPATH ca să funcționeze importurile din lib
-                sh 'PYTHONPATH=app ./venv/bin/python -m unittest app.test.testare'
+                echo 'Testare unitară...'
+                sh '''
+                    . ${VENV_PATH}/bin/activate
+                    python3 -m unittest discover -s test -p "testare.py"
+                '''
             }
         }
 
-        stage('Docker Build') {
+        stage('Docker Build & Deploy') {
             steps {
-                sh 'docker build -t tigru-app .'
-            }
-        }
-
-        stage('Run capibara.py (numai manual)') {
-            when {
-                expression { return params.TRIGGER_MANUAL }
-            }
-            steps {
-                // Adaugă app/lib în PYTHONPATH pentru ca importurile să funcționeze
-                sh 'PYTHONPATH=app ./venv/bin/python capibara.py'
+                echo "Build Docker pentru Capibara (ID: ${BUILD_NUMBER})"
+                sh '''
+                    docker build -t capibara:v${BUILD_NUMBER} .
+                    docker rm -f capibara${BUILD_NUMBER}  true
+                    docker create --name capibara${BUILD_NUMBER} -p 8020:5000 capibara:v${BUILD_NUMBER}
+                '''
             }
         }
     }
 
     post {
         success {
-            echo 'Pipeline terminat cu succes!'
+            echo 'Pipeline Capibara finalizat cu succes.'
         }
         failure {
-            echo 'Eroare în pipeline!'
+            echo 'A apărut o eroare în pipeline.'
         }
     }
 }
-
