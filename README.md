@@ -30,10 +30,6 @@ Fișierul central este `marmota.py`, iar proiectul este organizat pentru a permi
 - Cod verificat și testat
 - Suport complet pentru CI/CD și containerizare
 
-### Probleme cunoscute
-- Lipsă interfață vizuală (HTML)
-- Lipsă rutare extinsă (doar ruta principală `/` implementată)
-
 ---
 
 ## Configurare și rulare
