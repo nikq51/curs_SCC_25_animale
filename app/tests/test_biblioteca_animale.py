@@ -1,4 +1,4 @@
-from app.lib import biblioteca_animale as b_animale
+from lib import biblioteca_animale as b_animale
 def test_simplu():
 	assert b_animale.salut() == "Salut din biblioteca_animale!"
 
