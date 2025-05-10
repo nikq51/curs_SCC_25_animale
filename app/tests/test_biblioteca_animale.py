@@ -1,6 +1,6 @@
 from app.lib import biblioteca_animale as b_animale
 def test_simplu():
-	assert b_salut() == "biblioteca_animale !"
+	assert b_animale.salut() == "Salut din biblioteca_animale!"
 
 def test_culoare_arici():
 	cul = b_animale.culoare_arici()
