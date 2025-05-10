@@ -17,7 +17,7 @@ pipeline {
     }
     stage('Test') {
       steps { 
-      	   cd /home/razvan/SCC/curs_SCC_25_animale
+      	  sh 'cd /home/razvan/SCC/curs_SCC_25_animale'
 	  sh 'python3 -m unittest app.test.test_marmota' 
 	   
 	   }
