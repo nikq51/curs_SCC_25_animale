@@ -21,11 +21,9 @@ pipeline {
                 sh '''
                     cd app;
                     . ./activeaza_venv;
-                    echo '\n\nVerificare lib/*.py cu pylint\n';
-                    pylint --exit-zero lib/*.py;
-                    echo '\n\nVerificare tests/*.py cu pylint';
+                    echo "\\nVerificare tests/*.py cu pylint";
                     pylint --exit-zero tests/*.py;
-                    echo '\n\nVerificare animale.py cu pylint';
+                    echo "\\nVerificare animale.py cu pylint";
                     pylint --exit-zero animale.py;
                 '''
             }
@@ -38,7 +36,8 @@ pipeline {
                 sh '''
                     cd app;
                     . ./activeaza_venv;
-                    python3 -m pytest -v;
+                    export PYTHONPATH=$(pwd);
+                    python3 -m pytest -v
                 '''
             }
         }
@@ -46,7 +45,7 @@ pipeline {
         stage('Deploy') {
             agent any
             steps {
-                echo 'SE LUCREAZA ! ...'
+                echo 'În lucru...'
             }
         }
     }
