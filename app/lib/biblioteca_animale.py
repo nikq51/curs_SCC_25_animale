@@ -1,4 +1,4 @@
-"""Modul cu informații despre arici."""
+"""Bibliotecă cu informații despre arici."""
 
 def salut():
     return "Salut din biblioteca_animale!"
