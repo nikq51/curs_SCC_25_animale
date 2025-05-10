@@ -4,7 +4,6 @@
 ## Cuprins
 1. [Descriere aplicație](#descriere-aplicație)
 2. [Versiune și status](#versiune-și-status)
-   1. [Probleme cunoscute](#probleme-cunoscute)
 3. [Configurare și rulare](#configurare-și-rulare)
 4. [Testare](#testare)
 5. [Verificare calitate cod cu pylint](#verificare-calitate-cod-cu-pylint)
