@@ -24,7 +24,7 @@ pipeline {
                 sh '''
                     . ${VENV_PATH}/bin/activate
                     echo 'Analiză lib/.py'
-                    pylint --exit-zero lib/.py  true
+                    pylint --exit-zero lib || true
 
                     echo 'Analiză test/.py'
                     pylint --exit-zero test/.py  true
