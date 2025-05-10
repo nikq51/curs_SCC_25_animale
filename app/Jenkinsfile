@@ -1,51 +1,48 @@
 pipeline {
-    agent none
+    agent any
+
+    environment {
+        PYTHONPATH = "${WORKSPACE}/app"
+    }
 
     stages {
         stage('Build') {
-            agent any
             steps {
-                echo 'Building...'
                 sh '''
-                    cd app;
-                    pwd;
-                    ls -l;
-                    . ./activeaza_venv_jenkins
+                echo "Building..."
+                cd app
+                ./activeaza_venv_jenkins
                 '''
             }
         }
 
         stage('pylint - calitate cod') {
-            agent any
             steps {
                 sh '''
-                    cd app;
-                    . ./activeaza_venv;
-                    echo "\\nVerificare tests/*.py cu pylint";
-                    pylint --exit-zero tests/*.py;
-                    echo "\\nVerificare animale.py cu pylint";
-                    pylint --exit-zero animale.py;
+                cd app
+                . ./activeaza_venv
+                echo "\nVerificare lib cu pylint"
+                pylint --exit-zero lib/*.py
+                echo "\nVerificare tests cu pylint"
+                pylint --exit-zero tests/*.py
                 '''
             }
         }
 
         stage('Unit Testing cu pytest') {
-            agent any
             steps {
-                echo 'Unit testing with Pytest...'
                 sh '''
-                    cd app;
-                    . ./activeaza_venv;
-                    export PYTHONPATH=$(pwd);
-                    python3 -m pytest -v
+                cd app
+                . ./activeaza_venv
+                export PYTHONPATH=$(pwd)
+                python3 -m pytest -v tests/
                 '''
             }
         }
 
         stage('Deploy') {
-            agent any
             steps {
-                echo 'În lucru...'
+                echo "Deploy stage (placeholder)..."
             }
         }
     }
