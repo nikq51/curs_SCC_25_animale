@@ -1,0 +1,2 @@
+def get_descriere():
+    return " Marmotele sunt un gen de mamifere rozătoare plantigrade galericole din familia sciuride de talie relativ mare (30-60 cm lungime și o greutate de 3-7,5 kg), cu corp greoi, membre scurte, coada ușor comprimată și acoperită de peri lungi. Au un cap masiv, urechile mici și rotunjite. Grosimea blănii lor este influențată de condițiile climatice, iar culoarea variază după specie, de la cafeniu-gălbui, la cafeniu-roșcat sau cafeniu închis pe spate și flancuri."
