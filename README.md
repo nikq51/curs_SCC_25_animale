@@ -2,33 +2,34 @@
 ============================
 
 ## Cuprins
-1. [Baranga Andreea-Maria: zebra](#baranga_andreea_maria_zebra)
-2. [Basarab Elena Florentina: leopard](#leopard)
-3. [Bratu Andreea-Ioana: pantera](#pantera)
-4. [Busuioc Nicu-Lucian: capibara](#capibara)
-5. [Calota Andrei Cosmin: leu](#leu)
-6. [Chirtoaca Andreea: panda](#panda)
-7. [Ciobanu Christiana-Andreea: puma](#puma)
-8. [Crasnoșcioc Nicolae: manul](#manul)
-9. [Curiman Teodor: ](#containerizare)
-10. [Drăgan Marina-Georgiana: urs](#uss)
-11. [Dumitrescu Robert-Cristian: caine](#caine)
-12. [Ioana Crina-Maria: pisica](#pisica)
-13. [Ion Filip-Viorel: alpaca](#alpaca)
-14. [Ionescu Razvan: marmota](#marmota)
-15. [Ionescu Ștefania: cal](#cal)
-16. [Ivașcu Alexia-Ioana: tigru](#tigru)
-17. [Ladiu Andrei-Cătălin: lup](#lup)
-18. [Manea Claudiu-Florin: bizon](#bizon)
-19. [Manea Mihaita-Cristian: arici](#arici)
-20. [Mirea Catalin-Gabriel: raton](#raton)
-21. [Panait Denis-Valentin: vulpe](#vulpe)
-22. [Petrache Andrei-Nicolae: delfin](#delfin)
-23. [Prioteasa Ioana: vidra](#vidra)
-24. [Stan Maria: lemur](#lemur)
-25. [Tudor Tudor: vultur](#vultur)
-26. [Zamfir Alin-George: nevastuica](#nevastuica)
-27. [Zamirca Minodora Adriana: koala](#koala)
+
+1. [Baranga Andreea-Maria: zebra](#baranga-andreea-maria-zebra)  
+2. [Basarab Elena Florentina: leopard](#basarab-elena-florentina-leopard)  
+3. [Bratu Andreea-Ioana: pantera](#bratu-andreea-ioana-pantera)  
+4. [Busuioc Nicu-Lucian: capibara](#busuioc-nicu-lucian-capibara)  
+5. [Calota Andrei Cosmin: leu](#calota-andrei-cosmin-leu)  
+6. [Chirtoaca Andreea: panda](#chirtoaca-andreea-panda)  
+7. [Ciobanu Christiana-Andreea: puma](#ciobanu-christiana-andreea-puma)  
+8. [Crasnoșcioc Nicolae: manul](#crasnoscioc-nicolae-manul)  
+9. [Curiman Teodor: containerizare](#curiman-teodor-containerizare)  
+10. [Drăgan Marina-Georgiana: urs](#dragan-marina-georgiana-urs)  
+11. [Dumitrescu Robert-Cristian: caine](#dumitrescu-robert-cristian-caine)  
+12. [Ioana Crina-Maria: pisica](#ioana-crina-maria-pisica)  
+13. [Ion Filip-Viorel: alpaca](#ion-filip-viorel-alpaca)  
+14. [Ionescu Razvan: marmota](#ionescu-razvan-marmota)  
+15. [Ionescu Ștefania: cal](#ionescu-stefania-cal)  
+16. [Ivașcu Alexia-Ioana: tigru](#ivascu-alexia-ioana-tigru)  
+17. [Ladiu Andrei-Cătălin: lup](#ladiu-andrei-catalin-lup)  
+18. [Manea Claudiu-Florin: bizon](#manea-claudiu-florin-bizon)  
+19. [Manea Mihaita-Cristian: arici](#manea-mihaita-cristian-arici)  
+20. [Mirea Catalin-Gabriel: raton](#mirea-catalin-gabriel-raton)  
+21. [Panait Denis-Valentin: vulpe](#panait-denis-valentin-vulpe)  
+22. [Petrache Andrei-Nicolae: delfin](#petrache-andrei-nicolae-delfin)  
+23. [Prioteasa Ioana: vidra](#prioteasa-ioana-vidra)  
+24. [Stan Maria: lemur](#stan-maria-lemur)  
+25. [Tudor Tudor: vultur](#tudor-tudor-vultur)  
+26. [Zamfir Alin-George: nevastuica](#zamfir-alin-george-nevastuica)  
+27. [Zamirca Minodora Adriana: koala](#zamirca-minodora-adriana-koala)  
 
 ---
 
@@ -36,11 +37,15 @@
 
 ---
 
-# Baranga Andreea-Maria: zebra
+# Basarab Elena Florentina: leopard
 
 ---
 
-# Baranga Andreea-Maria: zebra
+# Bratu Andreea-Ioana: pantera
+
+---
+
+# Busuioc Nicu-Lucian: capibara
 
 ## Descriere aplicație
 
@@ -48,19 +53,17 @@
 
 Fișierul principal este `capibara.py`, iar aplicația este pregătită pentru dezvoltare colaborativă și scalabilă.
 
----
-
 ## Versiune și status
-**v1.0 – aplicație minim viabilă (MVP)**
-- Toate componentele esențiale funcționează
-- Codul este testat și analizat automat
+
+**v1.0 – aplicație minim viabilă (MVP)**  
+- Toate componentele esențiale funcționează  
+- Codul este testat și analizat automat  
 - Integrare completă în pipeline
 
 ### Probleme cunoscute
-- Interfață web minimă, fără HTML sau CSS
-- Necesită extindere pentru funcționalități suplimentare
 
----
+- Interfață web minimă, fără HTML sau CSS  
+- Necesită extindere pentru funcționalități suplimentare
 
 ## Configurare și rulare
 
