@@ -2,29 +2,35 @@ pipeline {
     agent any
 
     stages {
-        stage('Clonare cod') {
+        stage('Listare directoare') {
             steps {
-                echo ' Codul a fost preluat din repository.'
+                sh 'ls -l /home/student/marina/curs_SCC_25_animale'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                echo ' Se construiește imaginea Docker...'
-                sh 'docker build -t aplicatie-animale .'
+                sh 'docker build -t aplicatie-animale -f /home/student/marina/curs_SCC_25_animale/Dockerfile /home/student/marina/curs_SCC_25_animale'
             }
         }
 
         stage('Testare') {
             steps {
-                echo ' Se rulează testele...'
-                sh 'python app/tests/test_caracteristici.py'
+                dir('/home/student/marina/curs_SCC_25_animale') {
+                    sh 'python3 -m app.tests.test_caracteristici'
+                }
+            }
+        }
+
+        stage('Curățare container existent') {
+            steps {
+                sh 'docker stop animale_container || true'
+                sh 'docker rm animale_container || true'
             }
         }
 
         stage('Rulează Container') {
             steps {
-                echo ' Se pornește containerul...'
                 sh 'docker run -d -p 9090:9090 --name animale_container aplicatie-animale'
             }
         }
@@ -32,10 +38,10 @@ pipeline {
 
     post {
         success {
-            echo ' Pipeline finalizat cu succes.'
+            echo 'Pipeline rulat cu succes!'
         }
         failure {
-            echo ' A apărut o eroare în pipeline.'
+            echo 'Eroare în pipeline.'
         }
     }
 }
