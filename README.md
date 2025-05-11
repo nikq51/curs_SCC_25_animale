@@ -1,25 +1,49 @@
-# Tutorial – Veverița App
+# Veverița App – Tutorial fără Makefile
 
-### 1. Asigură-te că Make este instalat pe sistem
-```bash
-sudo apt install make
-```
+## 1. Asigură-te că ai instalate următoarele:
+
+- **Python 3.10+**
+- **Docker**
+- **Git**
+- (opțional) **pipenv** sau **venv** pentru un mediu virtual Python
 
 ---
 
-### 2. Rulează următoarele comenzi în terminalul tău Linux:
+## 2. Clonează proiectul
 
 ```bash
 git clone --branch main_veverita https://github.com/USERNAME/curs_SCC_25_veverita.git
 cd curs_SCC_25_veverita
-make all
 ```
 
 > Înlocuiește `USERNAME` cu numele tău de utilizator de GitHub dacă e cazul.
 
 ---
 
-### 3. Deschide aplicația în browser:
+## 3. Rulează aplicația local cu Docker
+
+### 🔨 Build imaginea:
+
+```bash
+docker build -t veverita_app .
+```
+
+### 🛑 Oprește orice instanță anterioară (dacă există):
+
+```bash
+docker stop veverita_container || true
+docker rm veverita_container || true
+```
+
+### 🚀 Pornește aplicația:
+
+```bash
+docker run -d -p 5000:5000 --name veverita_container veverita_app
+```
+
+---
+
+## 4. Deschide aplicația în browser:
 
 - http://localhost:5000/veverita  
   sau  
@@ -27,90 +51,87 @@ make all
 
 ---
 
-# Despre proiect
+# 📚 Despre proiect
 
-Aplicația **Veverița App** din cadrul proiectului **SCC 2025** (student **[Numele tău]**, grupa **[Grupa ta]**) demonstrează un flux complet de dezvoltare și livrare continuă pentru o aplicație web simplă. Principalele componente sunt:
-
----
-
-## 📚 Biblioteca de funcții pentru Veveriță
-
-În `app/lib/biblioteca_animale.py` sunt definite două funcții:
-
-- `culoare_veverita()` – returnează o descriere a culorii blănii veveriței.
-- `descriere_veverita()` – oferă o descriere generală a veveriței.
+Aplicația **Veverița App** din cadrul proiectului **SCC 2025** (student **[Numele tău]**, grupa **[Grupa ta]**) demonstrează un flux complet de dezvoltare și livrare continuă pentru o aplicație web simplă.
 
 ---
 
-## 🌐 Server Flask
+## Structura aplicației
 
-În `app/main.py` este configurat un server Flask cu următoarele rute:
+### ✅ Biblioteca de funcții (`app/lib/biblioteca_animale.py`)
 
-- `/veverita` – pagină principală cu linkuri către subpagini.
-- `/culoare_veverita` – afișează rezultatul funcției `culoare_veverita()`.
-- `/descriere_veverita` – afișează rezultatul funcției `descriere_veverita()`.
+- `culoare_veverita()` – oferă o descriere a culorii blănii veveriței.
+- `descriere_veverita()` – descriere generală a comportamentului veveriței.
 
-Se folosește `render_template_string` pentru a crea rapid un meniu HTML cu hyperlink-uri.
+---
+
+### 🌐 Server Flask (`app/main.py`)
+
+Serverul definește rutele:
+
+- `/veverita` – pagină principală cu linkuri.
+- `/culoare_veverita` – afișează rezultatul `culoare_veverita()`.
+- `/descriere_veverita` – afișează rezultatul `descriere_veverita()`.
+
+Folosește `render_template_string` pentru HTML minimalist.
 
 ---
 
 ## ✅ Testare automată cu `pytest`
 
-În `tests/test_biblioteca_animale.py` sunt definite teste care:
+Teste definite în `tests/test_biblioteca_animale.py`:
 
-- verifică dacă `culoare_veverita()` returnează un șir ce conține o culoare (ex. „gri”, „roșcat”, „negru” etc.).
-- validează că `descriere_veverita()` returnează un text de minimum 10 caractere.
+- Verifică dacă `culoare_veverita()` returnează o culoare validă.
+- Verifică dacă `descriere_veverita()` returnează un șir de caractere suficient de lung.
 
-Rulează testele local cu:
+### Pentru a rula testele:
+
 ```bash
+# Din rădăcina proiectului
 PYTHONPATH=$(pwd) pytest
 ```
 
 ---
 
-## 🐳 Containerizare cu Docker
+## 🐳 Containerizare Docker
 
-Fișierul `Dockerfile` definește o imagine Docker pe bază de `python:3.12-slim`, copiază codul sursă, instalează pachetele din `requirements.txt` și lansează serverul Flask.
+Aplicația este containerizată folosind `Dockerfile`, bazat pe imaginea `python:3.12-slim`.
 
-Comenzi utile:
+### Build manual:
 
 ```bash
 docker build -t veverita_app .
-docker run -p 5000:5000 veverita_app
+```
+
+### Rulează aplicația:
+
+```bash
+docker run -d -p 5000:5000 --name veverita_container veverita_app
 ```
 
 ---
 
 ## 🔁 Automatizare CI/CD cu Jenkins
 
-Un fișier `Jenkinsfile` este inclus pentru rularea automată a pașilor:
+Proiectul include un `Jenkinsfile` cu etape declarative:
 
-- **Checkout** – extrage codul din branch-ul `main_veverita`.
-- **Install** – rulează `pip install -r requirements.txt`.
-- **Test** – lansează `pytest` pentru testare automată.
-- **Build Docker Image** – opțional, construiește imaginea Docker (`docker build`).
+- **Checkout** – extragerea codului din `main_veverita`
+- **Install** – instalarea dependențelor
+- **Test** – rulare automată a testelor
+- **Build Docker Image** – opțional, construire imagine Docker
 
-Pipeline-ul Jenkins rulează la fiecare `push` pentru a valida codul și a pregăti imaginea Docker.
-
----
-
-## ⚙️ Makefile
-
-Un fișier `Makefile` în rădăcina proiectului definește ținte pentru:
-
-- `make build` – construiește imaginea Docker.
-- `make run` – pornește containerul (după ce îl oprește pe cel vechi).
-- `make stop` – oprește și șterge containerul.
-- `make all` – execută `build` și `run` dintr-o singură comandă.
-
-Pornirea completă a aplicației se face cu:
-
-```bash
-make all
-```
+Pipeline-ul se declanșează automat la fiecare `push`.
 
 ---
 
 ## ✅ Concluzie
 
-Acest proiect arată întregul ciclu de viață DevOps pentru o aplicație Python simplă: de la scrierea codului și testare, până la containerizare și CI/CD automatizat. README-ul și Makefile-ul permit rularea ușoară și prezentarea rapidă a aplicației.
+Proiectul **Veverița App** ilustrează un ciclu complet DevOps pentru o aplicație Python:
+
+- Cod curat, modular
+- Testare automată cu `pytest`
+- Containerizare cu Docker
+- Automatizare CI/CD cu Jenkins
+
+Toate acestea sunt documentate clar pentru rulare și prezentare fără Makefile.
