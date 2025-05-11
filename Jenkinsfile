@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build & Setup venv') {
             steps {
-                echo 'Setup mediu virtual și instalare dependințe...'
+                echo 'Setup mediu virtual si instalare dependinte...'
                 sh '''
                     python3 -m venv venv
                     . ${VENV_PATH}/bin/activate
@@ -20,38 +20,43 @@ pipeline {
 
         stage('Pylint - Calitate cod') {
             steps {
-                echo 'Rulare pylint pe codul Vultur...'
+                echo 'Rulare analiza statica cu pylint...'
                 sh '''
                     . ${VENV_PATH}/bin/activate
-                    echo 'Analiză lib/.py'
-                    pylint --exit-zero lib || true
 
-                    echo 'Analiză test/.py'
-                    pylint --exit-zero test/.py  true
+                    echo 'Verificare app/lib/*.py'
+                    pylint --exit-zero app/lib/*.py || true
 
-                    echo 'Analiză Vultur.py'
-                    pylint --exit-zero Vultur.py  true
+                    echo 'Verificare app/test/*.py'
+                    pylint --exit-zero app/test/*.py || true
+
+                    echo 'Verificare Vultur.py'
+                    pylint --exit-zero Vultur.py || true
                 '''
             }
         }
 
         stage('Unit Testing') {
             steps {
-                echo 'Testare unitară...'
+                echo 'Rulare teste unitare...'
                 sh '''
                     . ${VENV_PATH}/bin/activate
-                    python3 -m unittest discover -s test -p "testare.py"
+                    python3 -m unittest discover -s app/test -p "testare.py"
                 '''
             }
         }
 
-        stage('Docker Build & Deploy') {
+        stage('Docker Build & Run') {
             steps {
-                echo "Build Docker pentru Vultur (ID: ${BUILD_NUMBER})"
+                echo "Build si lansare container Docker - ID: ${BUILD_NUMBER}"
                 sh '''
                     docker build -t vultur:v${BUILD_NUMBER} .
-                    docker rm -f vultur${BUILD_NUMBER}  true
-                    docker create --name vultur${BUILD_NUMBER} -p 8020:5000 vultur:v${BUILD_NUMBER}
+
+                    echo 'Stergere container anterior daca exista...'
+                    docker rm -f vultur${BUILD_NUMBER} || true
+
+                    echo 'Pornire nou container...'
+                    docker run -d --name vultur${BUILD_NUMBER} -p 8020:5000 vultur:v${BUILD_NUMBER}
                 '''
             }
         }
@@ -59,10 +64,11 @@ pipeline {
 
     post {
         success {
-            echo 'Pipeline Vultur finalizat cu succes.'
+            echo 'Pipeline finalizat cu succes.'
         }
         failure {
-            echo 'A apărut o eroare în pipeline.'
+            echo 'A aparut o eroare in pipeline.'
         }
     }
 }
+
