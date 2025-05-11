@@ -15,6 +15,10 @@ downloads/
 eggs/
 .eggs/
 lib/
+# Permitem explict să ținem sub controlul versiunilor folderul nostru de cod
+!app/lib/
+!app/lib/biblioteca_animale.py
+#
 lib64/
 parts/
 sdist/
