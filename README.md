@@ -1,20 +1,79 @@
-🐆 Pantera Neagră
-📑 Cuprins
+Desigur! Mai jos ai o versiune de `README.md` care arată **corect formatată și frumos pe GitHub**, cu secțiuni clare, cod evidențiat și link-uri funcționale — totul adaptat pentru aplicația ta **Pantera Neagră**:
 
-Prezentare generală
+---
 
-Cum se instalează și pornește aplicația
+````markdown
+# 🐆 Pantera Neagră
 
-Rulare cu Docker
+📑 **Cuprins**
+- [🐾 Prezentare generală](#-prezentare-generală)
+- [⚙️ Cum se instalează și pornește aplicația](#️-cum-se-instalează-și-pornește-aplicația)
+- [🐳 Rulare cu Docker](#-rulare-cu-docker)
+- [🗂 Structură simplă](#-structură-simplă)
 
-🐾 Prezentare generală
-Aplicația Pantera Neagră este realizată în Python. Face parte din proiectul curs_SCC_25_animale și oferă o pagină web cu informații esențiale despre această felină.
+---
 
-Este gândită să fie ușor de pornit local, dar și pregătită pentru a fi rulată într-un container Docker, fără pași complicați.
+## 🐾 Prezentare generală
+
+Aplicația **Pantera Neagră** este realizată în Python folosind [Flask]. Face parte din proiectul `curs_SCC_25_animale` și oferă o interfață web care afișează informații esențiale despre această felină fascinantă.
+
+Este concepută pentru a fi:
+- ușor de rulat local;
+- portabilă și containerizabilă prin Docker.
+
+---
+
+## ⚙️ Cum se instalează și pornește aplicația
+
+1. Creează și activează un mediu virtual:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+````
+
+2. Instalează dependințele:
+
+```bash
+pip install -r quickrequirements.txt
+```
+
+3. Rulează aplicația Flask:
+
+```bash
+python3 app/441D_animal.py
+```
+
+4. Deschide browserul și accesează:
+   🌐 [http://localhost:5011/animal](http://localhost:5011/animal)
+
+---
+
+## 🐳 Rulare cu Docker
+
+Poți rula aplicația direct într-un container Docker:
+
+### ▶️ Build și lansare container:
+
+```bash
+docker build -t animal:v01 .
+docker run --name animal -p 8020:5011 animal:v01
+```
+
+Aplicația va fi disponibilă la:
+🌐 [http://localhost:8020/animal](http://localhost:8020/animal)
+
+### 🧹 Oprire și ștergere container:
+
+```bash
+docker stop animal
+docker rm animal
+```
+
+---
 
 ## 🗂 Structură simplă
 
-```
+```text
 .
 ├── app/                      # Codul aplicației
 │   └── lib/                  # Funcții despre animale
@@ -31,32 +90,12 @@ Este gândită să fie ușor de pornit local, dar și pregătită pentru a fi ru
 ```
 
 ---
-bash
-Copy
-Edit
-python3 -m venv venv
-source venv/bin/activate
-pip install -r quickrequirements.txt
-Rulează aplicația:
 
-bash
-Copy
-Edit
-python3 app/441D_animal.py
-Apoi accesează în browser:
-🌐 (http://172.17.0.2:5011/animal)
+💡 Dacă vrei, poți personaliza aplicația adăugând și alte animale, păstrând aceeași structură modulară.
 
-🐳 Rulare cu Docker
-Poți rula aplicația și într-un container, folosind comenzi simple:
+```
 
-▶️ Lansare container:
-bash
-Copy
-Edit
-docker run -- name animal -p 8020:5011 animal:v01
-🧹 Oprire și ștergere:
-bash
-Copy
-Edit
-docker stop pantera_container
-docker rm pantera_container
+---
+
+Vrei să-ți ofer și un `Dockerfile` curat și minim, pregătit pentru acest setup?
+```
