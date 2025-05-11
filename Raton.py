@@ -13,7 +13,7 @@ def index():
     '''
 
 @app.route("/raton")
-def nevastuica():
+def raton():
     return '''
         <h1>Raton</h1>
         <p><a href="/nraton/descriere">Descriere</a></p>
