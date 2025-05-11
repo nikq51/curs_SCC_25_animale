@@ -1,10 +1,7 @@
 #!/bin/bash
-# activeaza_venv
 
-# Numele directorului pentru mediul virtual
 VENV_DIR=".venv"
 
-# Verifică dacă directorul venv există
 if [ ! -d "$VENV_DIR" ]; then
     echo "Directorul mediului virtual '$VENV_DIR' nu a fost găsit."
     echo "Se creează mediul virtual..."
@@ -14,30 +11,23 @@ if [ ! -d "$VENV_DIR" ]; then
         exit 1
     fi
     echo "Mediul virtual '$VENV_DIR' a fost creat."
-    
+
     echo "Se instalează dependențele din requirements.txt..."
-    # Activează venv temporar pentru a instala pachetele
-    source $VENV_DIR/bin/activate
+    . $VENV_DIR/bin/activate
     pip install -r requirements.txt
     if [ $? -ne 0 ]; then
         echo "EROARE: Instalarea dependențelor a eșuat."
-        # O idee ar fi să ștergem venv-ul dacă instalarea pachetelor eșuează
-        # rm -rf $VENV_DIR 
         deactivate
         exit 1
     fi
-    deactivate # Dezactivează după instalare; scriptul principal va reactiva
+    deactivate
     echo "Dependențele au fost instalate."
 fi
 
-# Activează mediul virtual
 if [ -f "$VENV_DIR/bin/activate" ]; then
-    source $VENV_DIR/bin/activate
-    echo "SUCCESS: Mediul virtual '$VENV_DIR' a fost activat."
-    # Afișează versiunea Flask pentru verificare (opțional)
-    # python -m flask --version
+    . $VENV_DIR/bin/activate
+    echo "SUCCESS: Mediul virtual '$VENV_DIR' a fost activat pentru etapa curentă."
 else
     echo "EROARE: Scriptul 'activate' nu a fost găsit în '$VENV_DIR/bin'."
-    echo "Încercați să ștergeți directorul '$VENV_DIR' și să rulați din nou scriptul."
     exit 1
 fi
