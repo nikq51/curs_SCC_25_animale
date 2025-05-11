@@ -15,6 +15,8 @@ python3 -m pip install -r requirements.txt
     stage('Test') {    
       steps {sh '''
       . venv/bin/activate
+      python3 -m pip install -r requirements.txt
+export PYTHONPATH=$(pwd)      
       pytest --maxfail=1 --disable-warnings -q
     '''}
     }
