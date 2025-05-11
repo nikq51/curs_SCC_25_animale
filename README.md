@@ -44,6 +44,7 @@ Aplicația este testabilă, containerizată cu Docker și automatizată printr-u
 │       ├── __init__.py
 │       └── test_cal.py              # Teste unitar pentru Flask API
 
+```
 ---
 
 
