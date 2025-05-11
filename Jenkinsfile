@@ -6,8 +6,8 @@ pipeline {
     }
     stage('Install') {
       steps { sh '''
-sudo apt update
-sudo apt install -y python3-pip pyhton3-venv
+apt update
+apt install -y python3-pip pyhton3-venv
 python3 -m pip install --upgrade pip
 python3 -m pip install -r requirements.txt
 '''}
