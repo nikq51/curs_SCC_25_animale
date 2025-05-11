@@ -1,7 +1,6 @@
 #!/bin/bash
-# activeaza_venv
 
-VENV_DIR=".venv" 
+VENV_DIR=".venv"
 
 if [ ! -d "$VENV_DIR" ]; then
     echo "Directorul mediului virtual '$VENV_DIR' nu a fost găsit."
@@ -9,10 +8,10 @@ if [ ! -d "$VENV_DIR" ]; then
     python3 -m venv $VENV_DIR
     if [ $? -ne 0 ]; then
         echo "EROARE: Crearea mediului virtual a eșuat."
-        exit 1 
+        exit 1
     fi
     echo "Mediul virtual '$VENV_DIR' a fost creat."
-    
+
     echo "Se instalează dependențele din requirements.txt..."
     . $VENV_DIR/bin/activate
     pip install -r requirements.txt
@@ -30,6 +29,5 @@ if [ -f "$VENV_DIR/bin/activate" ]; then
     echo "SUCCESS: Mediul virtual '$VENV_DIR' a fost activat pentru etapa curentă."
 else
     echo "EROARE: Scriptul 'activate' nu a fost găsit în '$VENV_DIR/bin'."
-    echo "Încercați să ștergeți directorul '$VENV_DIR' din workspace-ul Jenkins și să rulați din nou."
     exit 1
 fi
