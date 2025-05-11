@@ -40,7 +40,7 @@ pipeline {
             steps {
                 echo 'Testare unitară...'
                 sh '''
-                    export PYTHONPATH="${WORKSPACE}:${PYTHONPATH}"
+                    export PYTHONPATH="${WORKSPACE}:${WORKSPACE}/app:${PYTHONPATH}"
                     echo "PYTHONPATH actual: $PYTHONPATH"
         
                     . ${VENV_PATH}/bin/activate
