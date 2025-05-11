@@ -2,6 +2,7 @@ from flask import Flask
 from app.lib.descriere import get_descriere
 from app.lib.habitat import get_habitat
 
+
 app = Flask(__name__)
 
 @app.route("/")
