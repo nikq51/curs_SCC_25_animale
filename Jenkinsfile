@@ -18,7 +18,7 @@ sh 'docker build -t alpaca_app .'
   }
   post {
     always {
-      
+     echo 'pipeline-ul e gata' 
     }
   }
 }
