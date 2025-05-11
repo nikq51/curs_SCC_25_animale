@@ -1,5 +1,5 @@
 from flask import Flask
-from lib.biblioteca_animale import culoare_cal(), descriere_cal()
+from lib.biblioteca_animale import culoare_cal, descriere_cal
 
 app = Flask(__name__)
 
@@ -9,11 +9,11 @@ def cal();
 
 @app.route('/cal/culoare')
 def culoare_cal();
-   return culoare_cal()
+   return "Poate fi negru, alb sau maro"
 
 @app.route('/cal/descriere')
 def descriere_cal();
-   return culoare_descriere()
+   return "Domestic"
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', port = 5000)
