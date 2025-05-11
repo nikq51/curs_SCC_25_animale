@@ -40,8 +40,11 @@ pipeline {
             steps {
                 echo 'Testare unitară...'
                 sh '''
+                    export PYTHONPATH="${WORKSPACE}:${PYTHONPATH}"
+                    echo "PYTHONPATH actual: $PYTHONPATH"
+        
                     . ${VENV_PATH}/bin/activate
-                    echo "Rulare teste cu Pytest (modul Python)..."
+                    echo "Rulare teste cu Pytest..."
                     python -m pytest
                     deactivate
                 '''
