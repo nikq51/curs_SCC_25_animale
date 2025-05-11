@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo '📥 Preluare cod sursă...'
+                echo ' Preluare cod sursă...'
                 checkout scm
             }
         }
@@ -38,7 +38,8 @@ pipeline {
             steps {
                 sh '''
                     . .venv/bin/activate
-                    pytest app/tests
+		    export PYTHOPATH=$(pwd)
+                    pytest app/tests -v
                 '''
             }
         }
