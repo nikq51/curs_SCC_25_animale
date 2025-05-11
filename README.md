@@ -266,12 +266,12 @@ Aplicația conține:
 
 ## Cuprins
 
-- [Structura proiectului]
-- [Descriere fișiere]
-- [Utilizare]
-- [Pipeline Jenkins]
-- [Git Workflow]
-- [Testare]
+- Structura proiectului
+- Descriere fișiere
+- Utilizare
+- Pipeline Jenkins
+- Git Workflow
+- Testare
 
 
 ## Structura proiectului
