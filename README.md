@@ -12,24 +12,25 @@ Aplicația Pantera Neagră este realizată în Python. Face parte din proiectul 
 
 Este gândită să fie ușor de pornit local, dar și pregătită pentru a fi rulată într-un container Docker, fără pași complicați.
 
-🗂 Organizarea fișierelor
-bash
-Copy
-Edit
-.
-├── app/                      # Aplicația propriu-zisă
-│   └── lib/                  # Conține funcțiile logice despre animale
-│   └── 441D_animal.py        # Scriptul principal al aplicației Flask
-├── Dockerfile                # Definirea imaginii Docker
-├── Makefile                  # Automatizare de comenzi (build, run)
-├── quickrequirements.txt     # Lista pachetelor necesare
-├── run                       # Script de rulare locală
-├── dockerstart.sh            # Lansare rapidă în container
-├── activeaza_venv            # Activare mediu virtual local
-├── .gitignore                # Fișiere ignorate în Git
-├── LICENSE                   # Informații legate de licențiere
-└── README.md                 # Documentația proiectului
+## 🗂 Structură simplă
 
+```
+.
+├── app/                      # Codul aplicației
+│   └── lib/                  # Funcții despre animale
+│   └── 441D_animal.py        # Aplicația principală Flask
+├── Dockerfile                # Instrucțiuni pentru rulare în container
+├── Makefile                  # Comenzi automate
+├── quickrequirements.txt     # Dependențe minime
+├── run                       # Script de pornire rapidă
+├── dockerstart.sh            # Script pentru pornire în Docker
+├── activeaza_venv            # Script de activare a mediului virtual
+├── .gitignore                # Fișiere de ignorat în Git
+├── LICENSE                   # Licență open-source
+└── README.md                 # Acest fișier
+```
+
+---
 bash
 Copy
 Edit
