@@ -85,7 +85,6 @@ python3 capibara.py
 Aplicația pornește pe adresa:
 📍 `http://127.0.0.1:5000/`
 
----
 
 ## Testare
 
@@ -99,7 +98,6 @@ python3 -m unittest app.test.testare
 
 Testele validează funcțiile principale ale aplicației.
 
----
 
 ## Verificare calitate cod cu pylint
 
@@ -109,7 +107,6 @@ pylint capibara.py || true
 
 Analiza codului este parte din pipeline și verifică respectarea convențiilor Python (PEP8).
 
----
 
 ## DevOps – CI/CD
 
@@ -125,7 +122,6 @@ Analiza codului este parte din pipeline și verifică respectarea convențiilor 
 
 Acest pipeline rulează automat la fiecare modificare în branch.
 
----
 
 ## Containerizare
 
@@ -146,7 +142,6 @@ docker run -d -p 8022:5000 capibara:v1
 
 Acces aplicație: `http://localhost:8022`
 
----
 
 ## Stadiu dezvoltare branch
 
@@ -162,7 +157,6 @@ Acces aplicație: `http://localhost:8022`
 - Branch activ: `devel_capibara_...`
 - Pull request deschis pentru `main`
 
----
 
 ## Bibliografie
 
@@ -180,7 +174,6 @@ Acces aplicație: `http://localhost:8022`
 
 Aceasta este o aplicație web simplă scrisă în Python folosind Flask, care prezintă informații despre leu: culoare și habitat. Proiectul este containerizat cu Docker și include un pipeline Jenkins pentru build, testare și rulare automată.
 
----
 
 ## Structura Proiectului
 
@@ -199,7 +192,6 @@ curs_SCC_25_animale/
 └── README.md                   # Documentația proiectului
 ```
 
----
 
 ## Rulare Locală cu Docker
 
@@ -226,7 +218,6 @@ docker run -d -p 7070:7070 --name leut_container aplicatie-leu
 
 Deschide în browser: [http://localhost:7070](http://localhost:7070)
 
----
 
 ## Rute Disponibile
 
@@ -235,7 +226,6 @@ Deschide în browser: [http://localhost:7070](http://localhost:7070)
 - `/leu/culoare` – Culoarea tipică a leului
 - `/leu/habitat` – Habitatul natural al leului
 
----
 
 ## Testare
 
@@ -247,7 +237,6 @@ python3 -m app.tests.test_caracteristici
 
 Testele verifică valorile returnate de funcțiile `get_culoare()` și `get_habitat()`.
 
----
 
 ## Jenkins Pipeline
 
