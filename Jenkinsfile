@@ -5,7 +5,12 @@ pipeline {
       steps { checkout scm }
     }
     stage('Install') {
-      steps { sh 'pip install -r requirements.txt' }
+      steps { sh '''
+sudo apt update
+sudo apt install -y python3-pip pyhton3-venv
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
+'''}
     }
     stage('Test') {
       steps { sh 'pytest --maxfail=1 --disable-warnings -q' }
