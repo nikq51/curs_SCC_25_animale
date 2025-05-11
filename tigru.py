@@ -11,48 +11,48 @@ html_template = """
     <style>
         body {{
             margin: 0;
-            font-family: 'Trebuchet MS', sans-serif;
-            background: linear-gradient(135deg, #1b5e20, #33691e);
-            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #2f2f2f;
+            color: #eae0d5;
             text-align: center;
-            padding: 0;
         }}
         .header {{
-            background-color: #1b1b1b;
+            background-color: #3b3b3b;
             padding: 20px 0;
-            margin-bottom: 30px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }}
         .app-title {{
-            color: #ff9800;
+            color: #c97c32;
             font-size: 36px;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
+            font-family: 'Georgia', serif;
             margin: 0;
-            font-family: 'Impact', sans-serif;
         }}
         .container {{
-            background-color: rgba(0, 0, 0, 0.4);
+            background-color: #3e3e3e;
             padding: 40px;
-            border-radius: 15px;
-            width: 60%;
-            margin: auto;
-            box-shadow: 0 0 25px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            width: 70%;
+            margin: 30px auto;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
         }}
         h1 {{
-            font-size: 30px;
-            color: #ff9800;
+            font-size: 28px;
+            color: #d6a96c;
             margin-bottom: 20px;
-            letter-spacing: 1px;
         }}
         p {{
             font-size: 18px;
-            color: #f1f8e9;
+            color: #eae0d5;
+            line-height: 1.6;
             margin-bottom: 30px;
         }}
         img {{
-            border: 5px solid #ff9800;
-            border-radius: 10px;
+            border: 4px solid #c97c32;
+            border-radius: 8px;
             margin-bottom: 20px;
+            max-width: 100%;
+            height: auto;
         }}
         .btn {{
             background: linear-gradient(45deg, #ff5722, #e65100);
@@ -77,7 +77,7 @@ html_template = """
 </head>
 <body>
     <header class="header">
-        <h1 class="app-title">🐅 Tigrul Sălbatic 🐅</h1>
+        <h1 class="app-title">🐅 Tigrul Sălbatic</h1>
     </header>
     <div class="container">
         {continut}
@@ -103,8 +103,7 @@ def home():
 def descriere():
     continut = """
     <h1>Descrierea tigrului</h1>
-    <p>Tigrul este un vânător solitar, cu o forță și agilitate uluitoare. 
-    Mișcarea lui este silențioasă, iar privirea — mortală.<br>
+    <p>Tigrul este un vânător solitar, cu o forță și agilitate uluitoare.<br>
     Trăiește în junglele dese și e simbolul puterii neîmblânzite.</p>
     <a href="/" class="btn">Înapoi</a>
     """
@@ -114,8 +113,7 @@ def descriere():
 def culoare():
     continut = """
     <h1>Culoarea tigrului</h1>
-    <p>Blana portocalie intensă, cu dungi negre perfect simetrice, 
-    îi oferă camuflaj în vegetația deasă.<br> 
+    <p>Blana portocalie intensă, cu dungi negre perfect simetrice.<br> 
     Ochii săi — verzi sau aurii — par că te privesc prin suflet.</p>
     <a href="/" class="btn">Înapoi</a>
     """
