@@ -8,11 +8,11 @@ def cal():
   return "Aceasta este pagina dedicata calului."
 
 @app.route('/cal/culoare')
-def culoare_cal()
+def culoare_cal():
    return "Poate fi negru, alb sau maro"
 
 @app.route('/cal/descriere')
-def descriere_cal()
+def descriere_cal():
    return "Domestic"
 
 if __name__ == "__main__":
