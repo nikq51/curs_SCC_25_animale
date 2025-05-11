@@ -2,10 +2,10 @@
 # Se plasează în directorul rădăcină al repo-ului, după git clone
 
 # Nume imagine și container
-IMAGE_NAME     := dostoievski_app
-CONTAINER_NAME := dostoievski_container
-HOST_PORT      := 5000
-CONT_PORT      := 5000
+IMAGE_NAME     := animal_app
+CONTAINER_NAME := animal_container
+HOST_PORT      := 5011
+CONT_PORT      := 5011
 
 .PHONY: all build run stop clean
 
@@ -18,7 +18,7 @@ build:
 # Rulează containerul (oprește și șterge unul existent mai întâi)
 run: stop
 	docker run -d --name $(CONTAINER_NAME) -p $(HOST_PORT):$(CONT_PORT) $(IMAGE_NAME)
-	@echo " Containerul '$(CONTAINER_NAME)' rulează pe http://127.0.0.1:$(HOST_PORT)/dostoievski"
+	@echo " Containerul '$(CONTAINER_NAME)' rulează pe http://127.0.0.1:$(HOST_PORT)/animal"
 
 # Oprește și șterge containerul, dacă există
 stop:
