@@ -29,8 +29,6 @@ Edit
 ├── .gitignore                # Fișiere ignorate în Git
 ├── LICENSE                   # Informații legate de licențiere
 └── README.md                 # Documentația proiectului
-⚙️ Cum se instalează și pornește aplicația
-Creează mediu virtual și instalează pachetele:
 
 bash
 Copy
