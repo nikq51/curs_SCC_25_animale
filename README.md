@@ -32,9 +32,9 @@
 
 ---
 
-## Baranga Andreea-Maria: zebra
+# Baranga Andreea-Maria: zebra
 
-### Descriere aplicație
+## Descriere aplicație
 
 **Capibara** este o aplicație dezvoltată în Python, bazată pe Flask, care servește drept exemplu de aplicație web simplă, cu integrare completă în DevOps. Este gândită pentru a permite testare automată, analiză a calității codului și livrare rapidă prin containerizare cu Docker și CI în Jenkins.
 
