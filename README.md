@@ -88,6 +88,3 @@ docker rm animal
 
 ---
 
-
-Vrei să-ți ofer și un `Dockerfile` curat și minim, pregătit pentru acest setup?
-```
