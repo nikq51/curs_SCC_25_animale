@@ -24,3 +24,22 @@ Aplicație web dezvoltată în Python folosind Flask, care oferă informații de
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+
+
+2. Pornire aplicație
+python Bizon.py
+
+
+3.Utilizare Docker
+docker build -t bizon .
+docker run -p 5000:5000 bizon
+
+4.Testare unitară
+python -m unittest discover -s test -p "testare.py"
+
+5. Jenkins CI/CD
+-Jenkinsfile-ul definește următoarele etape:
+-Configurare mediu virtual și instalare dependințe.
+-Analiză cod cu pylint.
+-Rulare teste unitare.
+-Construire imagine Docker și creare container cu versiune incrementată (bizon:v${BUILD_NUMBER}).
