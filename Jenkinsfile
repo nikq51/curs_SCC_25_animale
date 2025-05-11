@@ -14,27 +14,6 @@ pipeline {
                 '''
             }
         }
-        
-        stage('pylint - calitate cod') {
-            agent any
-            steps {
-                sh '''
-                   echo "Activare venv pentru Pylint..."
-                    . ./activeaza_venv;
-
-                    echo "Verificare PATH și locație pylint:"
-                    echo "PATH actual: $PATH"
-                    which pylint  # Această comandă va arăta calea către pylint dacă e găsit în PATH
-                                  # Sau va da eroare dacă nu e găsit
-
-                    echo '\n\nVerificare app/lib/*.py cu pylint\n';
-                    pylint --exit-zero app/lib/*.py;
-
-                    echo '\n\nVerificare app/Nicolae_441D_Animale.py cu pylint';
-                    pylint --exit-zero app/Nicolae_441D_Animale.py; 
-                '''
-            }
-        }
 
         stage('Unit Testing cu pytest') {
             agent any
