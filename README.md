@@ -171,3 +171,95 @@ Acces aplicație: `http://localhost:8022`
 - https://pylint.pycqa.org/
 - https://www.jenkins.io/doc/book/pipeline/
 - https://docs.docker.com/
+
+---
+
+Calota Andrei Cosmin: leu
+
+---
+
+Chirtoaca Andreea: panda
+
+---
+
+Ciobanu Christiana-Andreea: puma
+
+---
+
+Crasnoșcioc Nicolae: manul
+
+---
+
+Curiman Teodor: containerizare
+
+---
+
+Drăgan Marina-Georgiana: urs
+
+---
+
+Dumitrescu Robert-Cristian: caine
+
+---
+
+Ioana Crina-Maria: pisica
+
+---
+
+Ion Filip-Viorel: alpaca
+
+---
+
+Ionescu Razvan: marmota
+
+---
+
+Ionescu Ștefania: cal
+
+---
+
+Ivașcu Alexia-Ioana: tigru
+
+---
+
+Ladiu Andrei-Cătălin: lup
+
+---
+
+Manea Claudiu-Florin: bizon
+
+---
+
+Manea Mihaita-Cristian: arici
+
+---
+
+Mirea Catalin-Gabriel: raton
+
+---
+
+Panait Denis-Valentin: vulpe
+
+---
+
+Petrache Andrei-Nicolae: delfin 
+
+---
+
+Prioteasa Ioana: vidra
+
+---
+
+Stan Maria: lemur
+
+---
+
+Tudor Tudor: vultur
+
+---
+
+Zamfir Alin-George: nevastuica
+
+---
+
+Zamirca Minodora Adriana: koala
