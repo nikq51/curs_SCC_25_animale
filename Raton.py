@@ -4,6 +4,7 @@ from app.lib.habitat import get_habitat
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def index():
     return '''

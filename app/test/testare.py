@@ -2,6 +2,7 @@ import unittest
 from app.lib.descriere import get_descriere
 from app.lib.habitat import get_habitat
 
+
 class TestRatonInfo(unittest.TestCase):
     def test_descriere(self):
         descriere = get_descriere()
