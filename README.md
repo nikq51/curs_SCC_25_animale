@@ -1,3 +1,12 @@
+## 📑 Cuprins
+1. [Descriere]
+3. [Instalare si lansare]
+4. [Testare]
+5. [Verificare cod cu pylint]
+6. [Containerizare Docker]
+7. [CI cu Jenkins]
+
+---
 # 🐭 Raton
 
 Raton este o aplicație web simplă, construită cu [Flask] în Python. Scopul ei este să demonstreze cum poți construi rapid o aplicație web ușor de testat, containerizat și integrat într-un flux CI/CD cu Jenkins.
