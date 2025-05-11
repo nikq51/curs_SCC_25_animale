@@ -261,8 +261,6 @@ Fișierul `Jenkinsfile` definește un pipeline automat cu următoarele etape:
 
 ---
 
----
-
 # Chirtoaca Andreea: panda
 
 ---
