@@ -8,8 +8,6 @@ pipeline {
       steps { sh '''
       python3 -m venv venv
           . venv/bin/activate
-apt update
-apt install -y python3-pip pyhton3-venv
 python3 -m pip install --upgrade pip
 python3 -m pip install -r requirements.txt
 '''}
