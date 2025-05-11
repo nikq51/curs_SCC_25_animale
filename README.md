@@ -44,6 +44,8 @@ Aplicația este testabilă, containerizată cu Docker și automatizată printr-u
 │       ├── __init__.py
 │       └── test_cal.py              # Teste unitar pentru Flask API
 
+---
+
 
 ##Rularea aplicatiei
 
@@ -52,20 +54,27 @@ source venv/bin/activate
 pip install -r requirements.txt
 python3 app/441D_animale.py
 
+---
+
 ## Acces din browser
 http://localhost:5000/cal
 http://localhost:5000/cal/culoare
 http://localhost:5000/cal/descriere
 
+---
+
 ##Testare unitara
 
 PYTHONPATH=$PWD python3 -m unittest discover -s app/tests -p "test_*.py"
-
+---
 ## Containerizare Docker
 
 docker build -t flask_app_cal .
+---
+
 
 docker run -d --name flask_app_cal_container -p 5000:5000 flask_app_cal
+---
 
 ##CI/CD cu Jenkins
 
@@ -80,6 +89,7 @@ Pipeline-ul automat include următorii pași:
     Pornire container Docker - Se rulează containerul pe portul 5000
 
     Testare endpoint-uri - Testare finală cu curl pentru validare
+---
 
 ##Bibliografie
 
