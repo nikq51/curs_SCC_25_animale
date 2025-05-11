@@ -95,4 +95,4 @@ Makefile
         make all
 
 În ansamblu, proiectul demonstrează întregul ciclu de viață al unei aplicații: de la scrierea codului și testare, la containerizare și automatizare CI/CD, toate acestea fiind bine documentate în README pentru ușurința utilizării și prezentării.
-#testare jenkins automat
+
