@@ -174,92 +174,92 @@ Acces aplicație: `http://localhost:8022`
 
 ---
 
-Calota Andrei Cosmin: leu
+#Calota Andrei Cosmin: leu
 
 ---
 
-Chirtoaca Andreea: panda
+#Chirtoaca Andreea: panda
 
 ---
 
-Ciobanu Christiana-Andreea: puma
+#Ciobanu Christiana-Andreea: puma
 
 ---
 
-Crasnoșcioc Nicolae: manul
+#Crasnoșcioc Nicolae: manul
 
 ---
 
-Curiman Teodor: containerizare
+#Curiman Teodor: containerizare
 
 ---
 
-Drăgan Marina-Georgiana: urs
+#Drăgan Marina-Georgiana: urs
 
 ---
 
-Dumitrescu Robert-Cristian: caine
+#Dumitrescu Robert-Cristian: caine
 
 ---
 
-Ioana Crina-Maria: pisica
+#Ioana Crina-Maria: pisica
 
 ---
 
-Ion Filip-Viorel: alpaca
+#Ion Filip-Viorel: alpaca
 
 ---
 
-Ionescu Razvan: marmota
+#Ionescu Razvan: marmota
 
 ---
 
-Ionescu Ștefania: cal
+#Ionescu Ștefania: cal
 
 ---
 
-Ivașcu Alexia-Ioana: tigru
+#Ivașcu Alexia-Ioana: tigru
 
 ---
 
-Ladiu Andrei-Cătălin: lup
+#Ladiu Andrei-Cătălin: lup
 
 ---
 
-Manea Claudiu-Florin: bizon
+#Manea Claudiu-Florin: bizon
 
 ---
 
-Manea Mihaita-Cristian: arici
+#Manea Mihaita-Cristian: arici
 
 ---
 
-Mirea Catalin-Gabriel: raton
+#Mirea Catalin-Gabriel: raton
 
 ---
 
-Panait Denis-Valentin: vulpe
+#Panait Denis-Valentin: vulpe
 
 ---
 
-Petrache Andrei-Nicolae: delfin 
+#Petrache Andrei-Nicolae: delfin 
 
 ---
 
-Prioteasa Ioana: vidra
+#Prioteasa Ioana: vidra
 
 ---
 
-Stan Maria: lemur
+#Stan Maria: lemur
 
 ---
 
-Tudor Tudor: vultur
+#Tudor Tudor: vultur
 
 ---
 
-Zamfir Alin-George: nevastuica
+#Zamfir Alin-George: nevastuica
 
 ---
 
-Zamirca Minodora Adriana: koala
+#Zamirca Minodora Adriana: koala
