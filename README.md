@@ -1,4 +1,4 @@
-# Veverița App – Tutorial fără Makefile
+# Veverița App
 
 ## 1. Asigură-te că ai instalate următoarele:
 
