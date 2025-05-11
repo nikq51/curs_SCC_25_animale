@@ -1,1 +1,2 @@
 # curs_vcgj_25_scriitori
+blabla
