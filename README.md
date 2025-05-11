@@ -1,2 +1,1 @@
 curs_vcgj_25_441_animale
-test
