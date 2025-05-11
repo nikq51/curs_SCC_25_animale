@@ -23,7 +23,7 @@
 - integrare si livrare continua (CI/CD)
 - containerizare cu Docker
 
-Fisierul principal este `vultur.py`, iar codul este organizat modular pentru a permite extinderea si colaborarea in echipa.
+Fisierul principal este `Vultur.py`, iar codul este organizat modular pentru a permite extinderea si colaborarea in echipa.
 
 ---
 
@@ -52,7 +52,7 @@ pip install -r requirements.txt
 
 ### 2. Lansare server local
 ```bash
-python3 vultur.py
+python3 Vultur.py
 ```
 Acces aplicatie: `http://127.0.0.1:5000/`
 
@@ -135,8 +135,8 @@ Aplicatia va fi disponibila la `http://localhost:8020`
 - build + rulare automata in Jenkins
 
 ### Integrare Git:
-- Branch: `devel_vultur_nume`
-- Pull request creat catre `main`
+- Branch: `devel_tudor_tudor`
+- Pull request creat catre `main_tudor_tudor`
 
 ---
 
