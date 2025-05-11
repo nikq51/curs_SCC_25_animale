@@ -1,10 +1,9 @@
 ## 📑 Cuprins
 1. [Descriere]
-3. [Instalare si lansare]
-4. [Testare]
-5. [Verificare cod cu pylint]
-6. [Containerizare Docker]
-7. [CI cu Jenkins]
+2. [Instalare si lansare]
+3. [Testare]
+4. [Containerizare Docker]
+5. [CI cu Jenkins]
 
 ---
 # 🐭 Raton
@@ -41,4 +40,21 @@ Testele sunt scrise în `app/test/testare.py` și pot fi rulate cu:
 ```bash
 python3 -m unittest app.test.testare
 ```
+## Docker
 
+```bash
+docker build -t app-panda .
+docker run -d -p 5000:5000 --name app app-panda
+```
+## CI cu Jenkins
+
+`Jenkinsfile` definește etapele de build, testare și livrare:
+
+- Setup mediu virtual
+- Instalare dependințe
+- Analiză cu pylint
+- Testare automată
+- Build și rulare imagine Docker
+
+
+---
