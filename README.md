@@ -43,8 +43,8 @@ python3 -m unittest app.test.testare
 ## Docker
 
 ```bash
-docker build -t app-panda .
-docker run -d -p 5000:5000 --name app app-panda
+docker build -t raton:v1 .
+docker run -d -p 5000:5000 --name app raton:v1
 ```
 ## CI cu Jenkins
 
