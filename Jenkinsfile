@@ -23,14 +23,14 @@ pipeline {
                 echo 'Rulare pylint pe codul Nevastuica...'
                 sh '''
                     . ${VENV_PATH}/bin/activate
-                    echo 'Analiză lib/*.py'
-                    pylint --exit-zero lib/*.py || true
+                    echo 'Analiză lib/.py'
+                    pylint --exit-zero lib || true
 
-                    echo 'Analiză test/*.py'
-                    pylint --exit-zero test/*.py || true
+                    echo 'Analiză test/.py'
+                    pylint --exit-zero test/.py  true
 
-                    echo 'Analiză nevastuica.py'
-                    pylint --exit-zero nevastuica.py || true
+                    echo 'Analiză Nevastuica.py'
+                    pylint --exit-zero Nevastuica.py  true
                 '''
             }
         }
@@ -40,7 +40,7 @@ pipeline {
                 echo 'Testare unitară...'
                 sh '''
                     . ${VENV_PATH}/bin/activate
-                    python3 -m unittest discover -s test -p "testare.py"
+                    python3 -m unittest app.test.testare
                 '''
             }
         }
@@ -50,7 +50,7 @@ pipeline {
                 echo "Build Docker pentru Nevastuica (ID: ${BUILD_NUMBER})"
                 sh '''
                     docker build -t nevastuica:v${BUILD_NUMBER} .
-                    docker rm -f nevastuica${BUILD_NUMBER} || true
+                    docker rm -f nevastuica${BUILD_NUMBER}  true
                     docker create --name nevastuica${BUILD_NUMBER} -p 8020:5000 nevastuica:v${BUILD_NUMBER}
                 '''
             }
@@ -66,5 +66,3 @@ pipeline {
         }
     }
 }
-
-
