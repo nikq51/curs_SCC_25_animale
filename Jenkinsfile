@@ -45,10 +45,6 @@ pipeline {
                     export PYTHONPATH="${WORKSPACE}:${PYTHONPATH}"
                     echo "PYTHONPATH actual: $PYTHONPATH"
 
-                    echo "Verificare fișiere __init__.py..."
-                    touch app/__init__.py
-                    touch app/lib/__init__.py
-
                     echo "Rulare teste cu Pytest..."
                     pytest
                     deactivate
