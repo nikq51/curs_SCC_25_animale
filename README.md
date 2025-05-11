@@ -31,3 +31,6 @@
 27. [Zamirca Minodora Adriana: koala](#koala)
 
 ---
+
+## Baranga Andreea-Maria: zebra
+
