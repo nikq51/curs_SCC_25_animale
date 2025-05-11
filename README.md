@@ -5,7 +5,7 @@
 - **Python 3.10+**
 - **Docker**
 - **Git**
-- (opțional) **pipenv** sau **venv** pentru un mediu virtual Python
+- **venv** pentru un mediu virtual Python
 
 ---
 
