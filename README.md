@@ -2,7 +2,7 @@
 ============================
 
 ## Cuprins
-1. [Baranga Andreea-Maria: zebra](#Baranga_Andreea_Maria:_zebra)
+1. [Baranga Andreea-Maria: zebra](#baranga_andreea_maria_zebra)
 2. [Basarab Elena Florentina: leopard](#leopard)
 3. [Bratu Andreea-Ioana: pantera](#pantera)
 4. [Busuioc Nicu-Lucian: capibara](#capibara)
