@@ -42,8 +42,13 @@ pipeline {
                 sh '''
                     . ${VENV_PATH}/bin/activate
                     echo "Setare PYTHONPATH la directorul curent (workspace)..."
-                    export PYTHONPATH=${WORKSPACE}:${PYTHONPATH} 
+                    export PYTHONPATH="${WORKSPACE}:${PYTHONPATH}"
                     echo "PYTHONPATH actual: $PYTHONPATH"
+
+                    echo "Verificare fișiere __init__.py..."
+                    touch app/__init__.py
+                    touch app/lib/__init__.py
+
                     echo "Rulare teste cu Pytest..."
                     pytest
                     deactivate
