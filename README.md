@@ -132,5 +132,3 @@ Proiectul **Veverița App** ilustrează un ciclu complet DevOps pentru o aplica�
 - Testare automată cu `pytest`
 - Containerizare cu Docker
 - Automatizare CI/CD cu Jenkins
-
-Toate acestea sunt documentate clar pentru rulare și prezentare fără Makefile.
