@@ -1,3 +1,4 @@
+#SCC_proiect
 # Aplicație Flask – Urs
 
 Aceasta este o aplicație web scrisă în Python folosind Flask, care oferă informații despre animalul urs. Aplicația este containerizată cu Docker și folosește Jenkins pentru rulare automată.
