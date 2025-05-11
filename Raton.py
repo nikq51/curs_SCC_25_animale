@@ -13,10 +13,10 @@ def index():
     '''
 
 @app.route("/raton")
-def nevastuica():
+def raton():
     return '''
         <h1>Raton</h1>
-        <p><a href="/nraton/descriere">Descriere</a></p>
+        <p><a href="/raton/descriere">Descriere</a></p>
         <p><a href="/raton/habitat">Habitat</a></p>
         <p><a href="/">Înapoi la pagina principală</a></p>
     '''
@@ -27,7 +27,7 @@ def descriere():
     return f'''
         <h1>Descrierea Ratonului</h1>
         <p>{text}</p>
-        <p><a href="/ratonul">Înapoi la Raton</a></p>
+        <p><a href="/raton">Înapoi la Raton</a></p>
         <p><a href="/">Înapoi la pagina principală</a></p>
     '''
 
