@@ -8,6 +8,8 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 
 COPY app /app
 
+RUN apt-get update && apt-get install -y curl
+
 EXPOSE 5000
 
 CMD ["python3", "/app/441D_animale.py"]

@@ -48,7 +48,7 @@ Aplicația este testabilă, containerizată cu Docker și automatizată printr-u
 ---
 
 
-##Rularea aplicatiei
+## Rularea aplicatiei
 
 python3 -m venv venv
 source venv/bin/activate
@@ -64,7 +64,7 @@ http://localhost:5000/cal/descriere
 
 ---
 
-##Testare unitara
+## Testare unitara
 
 PYTHONPATH=$PWD python3 -m unittest discover -s app/tests -p "test_*.py"
 ---
@@ -77,7 +77,7 @@ docker build -t flask_app_cal .
 docker run -d --name flask_app_cal_container -p 5000:5000 flask_app_cal
 ---
 
-##CI/CD cu Jenkins
+##C I/CD cu Jenkins
 
 Pipeline-ul automat include următorii pași:
 
@@ -92,7 +92,7 @@ Pipeline-ul automat include următorii pași:
     Testare endpoint-uri - Testare finală cu curl pentru validare
 ---
 
-##Bibliografie
+## Bibliografie
 
 Flask documentation: https://flask.palletsprojects.com/
 

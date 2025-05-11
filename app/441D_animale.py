@@ -8,13 +8,12 @@ def cal():
   return "Aceasta este pagina dedicata calului."
 
 @app.route('/cal/culoare')
-def culoare_cal():
-  return  "Are culori cum ar fi negru, maro, alb sau combinatii"
+def culoare_cal();
+   return "Poate fi negru, alb sau maro"
 
 @app.route('/cal/descriere')
-def descriere_cal():
-  return  "Este domestic"
-
+def descriere_cal();
+   return "Domestic"
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', port = 5000)
