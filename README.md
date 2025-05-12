@@ -18,7 +18,7 @@
 ## Descriere aplicatie
 
 **Vultur** este o aplicatie de tip microserviciu scrisa in Python, care utilizeaza framework-ul Flask. Aplicatia este dezvoltata pentru a demonstra o arhitectura simplificata de tip DevOps, cu accent pe:
-- testare unitară
+- testare unitara
 - analiza statica a codului
 - integrare si livrare continua (CI/CD)
 - containerizare cu Docker
@@ -43,6 +43,7 @@ Fisierul principal este `Vultur.py`, iar codul este organizat modular pentru a p
 ## Configurare si rulare
 
 ### 1. Setup mediu virtual si instalare dependinte
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate
@@ -51,9 +52,11 @@ pip install -r requirements.txt
 ```
 
 ### 2. Lansare server local
+
 ```bash
 python3 Vultur.py
 ```
+
 Acces aplicatie: `http://127.0.0.1:5000/`
 
 ---
@@ -100,6 +103,7 @@ Pipeline-ul poate fi rulat manual din Jenkins sau automat prin webhook GitHub.
 ## Containerizare cu Docker
 
 ### Dockerfile utilizat
+
 ```Dockerfile
 FROM python:3.12-slim
 WORKDIR /app
@@ -109,6 +113,7 @@ CMD ["python3", "vultur.py"]
 ```
 
 ### Comenzi uzuale
+
 ```bash
 VERSION=1.0.0  # sau orice versiune dinamica
 
@@ -141,10 +146,10 @@ Aplicatia va fi disponibila la `http://localhost:8020`
 ---
 
 ## Bibliografie
+
 - https://flask.palletsprojects.com/
 - https://docs.python.org/3/library/unittest.html
 - https://pylint.pycqa.org/
 - https://www.jenkins.io/doc/book/pipeline/
 - https://docs.docker.com/
 - https://chat.openai.com/ (ChatGPT)
-
