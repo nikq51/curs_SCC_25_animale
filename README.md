@@ -1,7 +1,7 @@
 # curs_vcgj_25_441_animale
 # Aplicație Flask – ANIMALE (Leul)
 
-Aceasta este o aplicație web simplă scrisă în Python folosind Flask, care prezintă informații despre leu: culoare și habitat. Proiectul este containerizat cu Docker și include un pipeline Jenkins pentru build, testare și rulare automată.
+Aceasta este o aplicație web simplă, care este  scrisă în Python folosind Flask, care prezintă informații despre leu: culoare și habitat. Proiectul este containerizat cu Docker și include un pipeline Jenkins pentru build, testare și rulare automată.
 
 ---
 
