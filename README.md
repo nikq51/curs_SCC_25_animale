@@ -495,7 +495,8 @@ Notă: problemele găsite nu opresc execuția pipeline-ului.
 # Crasnoscioc Nicolae: manul
 
 # Aplicația Animale - Manul
-[develop branch link](https://github.com/nikq51/curs_SCC_25_animale/tree/devel_crasnoscioc_nicolae)
+### [develop branch link](https://github.com/nikq51/curs_SCC_25_animale/tree/devel_crasnoscioc_nicolae)
+### [stable version branch link](https://github.com/nikq51/curs_SCC_25_animale/tree/main_crasnoscioc_nicolae)
 ===================================
 
 ## Cuprins
