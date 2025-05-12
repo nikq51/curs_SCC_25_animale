@@ -32,7 +32,6 @@ Această componentă specifică se concentrează pe prezentarea de informații d
 
 ### Probleme cunoscute
 - Interfața web este minimă, generată direct ca HTML în Python.
-- (De adăugat alte probleme specifice dacă există)
 
 ---
 
