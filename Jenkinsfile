@@ -22,6 +22,16 @@ pipeline {
         sh 'docker build -t veverita_app .'
       }
     }
+    stage('Run Docker image') {
+      steps {
+    // Oprește și șterge eventualul container existent cu același nume
+        sh '''
+          docker rm -f veverita_container || true
+          docker run -d -p 5000:5000 --name veverita_container veverita_app
+          '''
+      }
+    }
+
   }
   post {
     always {
