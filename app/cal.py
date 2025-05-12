@@ -1,5 +1,5 @@
 from flask import Flask
-from lib.biblioteca_animale import culoare_cal, descriere_cal
+from app.lib.biblioteca_animale import culoare_cal, descriere_cal
 
 app = Flask(__name__)
 

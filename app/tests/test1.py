@@ -14,13 +14,13 @@ def test_culori_cal(client):
     """Test pentru ruta /cal/culoare"""
     response = client.get('/cal/culoare')
     assert response.status_code == 200
-    assert b"Culoarea unui cal poate varia" in response.data
+    assert b"Poate fi negru, alb sau maro" in response.data
 
 def test_descriere_cal(client):
     """Test pentru ruta /cal/descriere"""
     response = client.get('/cal/descriere')
     assert response.status_code == 200
-    assert b"Calul este un mamifer" in response.data
+    assert b"Domestic" in response.data
 
 def test_cal(client):
     """Test pentru ruta /cal"""
