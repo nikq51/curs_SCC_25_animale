@@ -72,5 +72,4 @@ Testele din app/test/test_delfin.py verifică:
 
 -dacă textul conține cuvintele-cheie corecte
 
-
 python3 -m unittest app.test.test_delfin
