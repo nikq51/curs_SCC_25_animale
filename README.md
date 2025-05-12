@@ -648,7 +648,7 @@ Acces aplicație: `http://localhost:5001`
 
 ---
 
-# Curiman Teodor: containerizare
+# Curiman Teodor: veverita
 
 ## 1. Asigură-te că ai instalate următoarele:
 
