@@ -1,44 +1,48 @@
-# Vultur
-============================
+# Proiect: Vultur
 
 ## Cuprins
-1. [Descriere aplicație](#descriere-aplicație)
-2. [Versiune și status](#versiune-și-status)
-   1. [Probleme cunoscute](#probleme-cunoscute)
-3. [Configurare și rulare](#configurare-și-rulare)
+1. [Descriere aplicatie](#descriere-aplicatie)
+2. [Versiune si status](#versiune-si-status)
+    - [Probleme cunoscute](#probleme-cunoscute)
+3. [Configurare si rulare](#configurare-si-rulare)
 4. [Testare](#testare)
-5. [Verificare calitate cod cu pylint](#verificare-calitate-cod-cu-pylint)
-6. [DevOps – CI/CD](#devops---ci/cd)
-   1. [Pipeline Jenkins](#pipeline-jenkins)
-7. [Containerizare](#containerizare)
-8. [Stadiu dezvoltare branch](#stadiu-dezvoltare-branch)
+5. [Analiza statica cu pylint](#analiza-statica-cu-pylint)
+6. [DevOps - CI/CD](#devops---cicd)
+    - [Pipeline Jenkins](#pipeline-jenkins)
+7. [Containerizare cu Docker](#containerizare-cu-docker)
+8. [Stadiu dezvoltare](#stadiu-dezvoltare)
 9. [Bibliografie](#bibliografie)
 
 ---
 
-## Descriere aplicație
+## Descriere aplicatie
 
-**Vultur** este o aplicație de tip microserviciu scrisă în Python, care utilizează framework-ul Flask. Aplicația este dezvoltată pentru a demonstra o arhitectură simplificată de tip DevOps, cu accent pe testare, analiză statică a codului și automatizare prin Jenkins și Docker.
+**Vultur** este o aplicatie de tip microserviciu scrisa in Python, care utilizeaza framework-ul Flask. Aplicatia este dezvoltata pentru a demonstra o arhitectura simplificata de tip DevOps, cu accent pe:
+- testare unitara
+- analiza statica a codului
+- integrare si livrare continua (CI/CD)
+- containerizare cu Docker
 
-Fișierul principal este `vultur.py`, iar codul este organizat clar pentru extindere viitoare și colaborare în echipă.
+Fisierul principal este `Vultur.py`, iar codul este organizat modular pentru a permite extinderea si colaborarea in echipa.
 
 ---
 
-## Versiune și status
-**v1.0 – versiune funcțională stabilă**
-- Implementare corectă și rulabilă
-- Testată în medii locale și în Jenkins
-- Pipeline și containerizare complet configurate
+## Versiune si status
+
+**v1.0 - versiune functionala stabila**
+- Aplicatie complet functionala si rulabila
+- Testata local si automat in Jenkins
+- Pipeline CI/CD si containerizare functionala
 
 ### Probleme cunoscute
-- Structura modulară minimă (momentan fără blueprint-uri Flask)
-- Nu include funcții avansate (ex: autentificare, sesiuni)
+- Structura modulara simpla (fara blueprint-uri Flask)
+- Lipsa functionalitatilor avansate (autentificare, sesiuni etc.)
 
 ---
 
-## Configurare și rulare
+## Configurare si rulare
 
-### 1. Setup mediu virtual și instalare dependințe
+### 1. Setup mediu virtual si instalare dependinte
 
 ```bash
 python3 -m venv venv
@@ -50,56 +54,57 @@ pip install -r requirements.txt
 ### 2. Lansare server local
 
 ```bash
-python3 vultur.py
+python3 Vultur.py
 ```
 
-Aplicația este accesibilă la:  
-📍 `http://127.0.0.1:5000/`
+Acces aplicatie: `http://127.0.0.1:5000/`
 
 ---
 
 ## Testare
 
-### 1. Rulare teste
+Aplicatia contine teste unitare care acopera rutele Flask.
 
-Aplicația include un fișier de testare cu `unittest`, rulabil cu:
-
+### Rulare teste:
 ```bash
-python3 -m unittest app.test.testare
+python3 -m unittest discover -s app/test -p "testare.py"
 ```
-
-Testele acoperă comportamentul rutelor definite în aplicație.
 
 ---
 
-## Verificare calitate cod cu pylint
+## Analiza statica cu pylint
 
+Poti rula pylint pentru a analiza codul Python:
 ```bash
-pylint vultur.py || true
+pylint Vultur.py app/lib/*.py app/test/*.py || true
 ```
 
-Se verifică stilul, utilizarea variabilelor, organizarea funcțiilor și respectarea regulilor Python.
+Aceasta comanda verifica:
+- stilul codului
+- respectarea conventiilor PEP8
+- utilizarea corecta a variabilelor si importurilor
 
 ---
 
-## DevOps – CI/CD
+## DevOps - CI/CD
 
 ### Pipeline Jenkins
 
-Pipeline-ul este configurat în `Jenkinsfile` și include:
+Configuratia pipeline-ului se afla in fisierul `Jenkinsfile` si include:
+- configurare mediu virtual
+- analiza statica cu pylint
+- rulare teste unitare cu unittest
+- build si rulare container Docker
 
-- Configurare mediu de lucru
-- Analiză statică
-- Testare automată
-- Build și deploy Docker
-
-Acesta rulează automat la push în GitHub și oferă feedback imediat.
+Pipeline-ul poate fi rulat manual din Jenkins sau automat prin webhook GitHub.
 
 ---
 
-## Containerizare
+## Containerizare cu Docker
 
-```dockerfile
+### Dockerfile utilizat
+
+```Dockerfile
 FROM python:3.12-slim
 WORKDIR /app
 COPY . .
@@ -107,32 +112,36 @@ RUN pip install -r requirements.txt
 CMD ["python3", "vultur.py"]
 ```
 
-### Comenzi uzuale:
+### Comenzi uzuale
 
 ```bash
-docker build -t vultur:v1 .
-docker run -d -p 8023:5000 vultur:v1
+VERSION=1.0.0  # sau orice versiune dinamica
+
+docker build -t vultur:v$VERSION .
+docker run -d -p 8020:5000 vultur:v$VERSION
 ```
 
-Aplicația va putea fi accesată la `http://localhost:8023`.
+Aplicatia va fi disponibila la `http://localhost:8020`
 
 ---
 
-## Stadiu dezvoltare branch
+## Stadiu dezvoltare
 
-### Funcționalități finalizate:
-- Server Flask + endpoint principal
-- Teste unitare de bază
-- Analiză cod + Docker integrate în CI
+### Functionalitati implementate:
+- Aplicatie Flask complet functionala
+- Teste unitare cu unittest
+- Linting cu pylint
+- Pipeline CI/CD in Jenkins
+- Docker pentru build si deploy
 
 ### Teste efectuate:
-- Verificare `unittest`
-- Verificare `pylint`
-- Rulare completă în Jenkins + Docker
+- unittest complet (testare rute)
+- pylint (analiza statica)
+- build + rulare automata in Jenkins
 
-### Integrare:
-- Branch `devel_vultur_nume`
-- Pull request creat pentru integrarea în `main`
+### Integrare Git:
+- Branch: `devel_tudor_tudor`
+- Pull request creat catre `main_tudor_tudor`
 
 ---
 
@@ -143,3 +152,4 @@ Aplicația va putea fi accesată la `http://localhost:8023`.
 - https://pylint.pycqa.org/
 - https://www.jenkins.io/doc/book/pipeline/
 - https://docs.docker.com/
+- https://chat.openai.com/ (ChatGPT)

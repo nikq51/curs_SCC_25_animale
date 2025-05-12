@@ -6,12 +6,12 @@ class TestVulturInfo(unittest.TestCase):
     def test_descriere(self):
         descriere = get_descriere()
         self.assertIsInstance(descriere, str)
-        self.assertTrue("vultur" in descriere)
+        self.assertTrue("plesuv" in descriere)
 
     def test_habitat(self):
         habitat = get_habitat()
         self.assertIsInstance(habitat, str)
-        self.assertTrue("test" in habitat or "habitat" in habitat)
+        self.assertTrue("muntii" in habitat or "Habitatul" in habitat)
 
 if __name__ == '__main__':
     unittest.main()
