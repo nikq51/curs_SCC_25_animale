@@ -1,0 +1,24 @@
+#!/bin/bash
+# ruleaza_aplicatia
+
+# Verifică dacă mediul virtual este activat
+# O modalitate simplă este să verifici dacă variabila VIRTUAL_ENV este setată
+if [ -z "$VIRTUAL_ENV" ]; then
+    echo "EROARE: Mediul virtual nu pare a fi activat."
+    echo "Rulați mai întâi 'source ./activeaza_venv'."
+    exit 1
+fi
+
+echo "Se pornește aplicația Flask..."
+# Navighează în directorul unde este fișierul principal al aplicației, dacă e necesar,
+# sau setează FLASK_APP corespunzător.
+# În cazul nostru, app/441D_Animale.py este rulat direct cu if __name__ == '__main__':
+# deci ar trebui să rulăm fișierul direct.
+
+# Alternativ, dacă vrei să folosești comanda 'flask run':
+# export FLASK_APP=app.441D_Animale  # Spune Flask unde să găsească aplicația (app este directorul, 441D_Animale este fișierul .py)
+# export FLASK_ENV=development       # Sau FLASK_DEBUG=1 pentru modul debug
+# python -m flask run --host=0.0.0.0 --port=5001
+
+# Rularea directă a scriptului Python, așa cum l-am configurat:
+python3 app/Nicolae_441D_Animale.py
