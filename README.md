@@ -10,7 +10,7 @@
 5. [Calota Andrei Cosmin: leu](#calota-andrei-cosmin-leu)  
 6. [Chirtoaca Andreea: panda](#chirtoaca-andreea-panda)  
 7. [Ciobanu Christiana-Andreea: puma](#ciobanu-christiana-andreea-puma)  
-8. [Crasnoșcioc Nicolae: manul](#crasnoscioc-nicolae-manul)  
+8. [Crasnoscioc Nicolae: manul](#crasnoscioc-nicolae-manul)  
 9. [Curiman Teodor: containerizare](#curiman-teodor-containerizare)  
 10. [Drăgan Marina-Georgiana: urs](#dragan-marina-georgiana-urs)
 11. [Dumitrescu Robert-Cristian: caine](#dumitrescu-robert-cristian-caine)  
@@ -492,7 +492,7 @@ Notă: problemele găsite nu opresc execuția pipeline-ului.
 
 ---
 
-# Crasnoșcioc Nicolae: manul
+# Crasnoscioc Nicolae: manul
 
 # Aplicația Animale - Manul
 [develop branch link](https://github.com/nikq51/curs_SCC_25_animale/tree/devel_crasnoscioc_nicolae)
