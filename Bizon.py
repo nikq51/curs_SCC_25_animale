@@ -9,35 +9,35 @@ app = Flask(__name__)
 def index():
     return '''
         <h1>Tema: Animale</h1>
-        <p><a href="/nevastuica">Nevastuica</a></p>
+        <p><a href="/bizon">Bizonul</a></p>
     '''
 
-@app.route("/nevastuica")
-def nevastuica():
+@app.route("/bizon")
+def bizon():
     return '''
-        <h1>Nevastuica</h1>
-        <p><a href="/nevastuica/descriere">Descriere</a></p>
-        <p><a href="/nevastuica/habitat">Habitat</a></p>
+        <h1>Bizon</h1>
+        <p><a href="/bizon/descriere">Descriere</a></p>
+        <p><a href="/bizon/habitat">Habitat</a></p>
         <p><a href="/">Înapoi la pagina principală</a></p>
     '''
 
-@app.route("/nevastuica/descriere")
+@app.route("/bizon/descriere")
 def descriere():
     text = get_descriere()
     return f'''
-        <h1>Descrierea Nevastuicii</h1>
+        <h1>Descrierea Bizlonului</h1>
         <p>{text}</p>
-        <p><a href="/nevastuica">Înapoi la Nevastuica</a></p>
+        <p><a href="/bizon">Înapoi la Bizon</a></p>
         <p><a href="/">Înapoi la pagina principală</a></p>
     '''
 
-@app.route("/nevastuica/habitat")
+@app.route("/bizon/habitat")
 def habitat():
     text = get_habitat()
     return f'''
-        <h1>Habitatul Nevastuicii</h1>
+        <h1>Habitatul Bizonului</h1>
         <p>{text}</p>
-        <p><a href="/nevastuica">Înapoi la Nevastuica</a></p>
+        <p><a href="/bizon">Înapoi la Bizon</a></p>
         <p><a href="/">Înapoi la pagina principală</a></p>
     '''
 
