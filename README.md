@@ -1,6 +1,6 @@
 ##curs_SCC_25_animale
 # Zebra App – Proiect SCC 2025 🦓  
-*Baranga Andreea, grupa XXX*
+*Baranga Andreea, grupa 441D*
 
 ---
 
